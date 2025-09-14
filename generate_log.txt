@@ -1,12 +1,28 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-14 20:44:30 +07
+Timestamp: 2025-09-14 21:36:05 +07
 
-Domain: capitoneshirt.com
-  Skipped Images: 82
-  Total URLs to Process: 82
+Domain: geekteesus.com
+  Skipped Images: 75
+  Total URLs to Process: 75
+
+Domain: meredpremium.com
+  ktbtee: 14
+  Skipped Images: 0
+  Total URLs to Process: 14
+
+Domain: teespix.com
+  whatwillwear: 16
+  Skipped Images: 0
+  Total URLs to Process: 16
+
+Domain: teleteeshirt.com
+  ktbtee: 32
+  albumcoverprint: 32
+  Skipped Images: 0
+  Total URLs to Process: 32
 
 Domain: lovingsquad.com
-  albumcoverprint: 69
-  Skipped Images: 2
-  Total URLs to Process: 71
+  albumcoverprint: 87
+  Skipped Images: 0
+  Total URLs to Process: 87
 
