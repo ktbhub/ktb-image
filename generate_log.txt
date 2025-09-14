@@ -1,16 +1,14 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-14 18:30:26 +07
-
-Domain: techteesusa.com
-  ktbtee: 59
-  whatwillwear: 59
-  Skipped Images: 0
-  Total URLs to Process: 59
+Timestamp: 2025-09-14 18:43:31 +07
 
 Domain: teeworksusa.com
-  albumcoverprint: 18
-  ktbtee: 21
-  whatwillwear: 21
+  ktbtee: 50
   Skipped Images: 0
-  Total URLs to Process: 39
+  Total URLs to Process: 50
+
+Domain: teleteeshirt.com
+  ktbtee: 1
+  albumcoverprint: 1
+  Skipped Images: 0
+  Total URLs to Process: 1
 
