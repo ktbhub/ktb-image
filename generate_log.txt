@@ -1,33 +1,29 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-14 08:52:40 +07
-
-Domain: teeextra.com
-  Skipped Images: 8
-  Total URLs to Process: 8
-
-Domain: fanaticity.com
-  whatwillwear: 25
-  Skipped Images: 0
-  Total URLs to Process: 25
-
-Domain: legendusashirt.com
-  albumcoverprint: 63
-  Skipped Images: 37
-  Total URLs to Process: 100
-
-Domain: teehandus.com
-  albumcoverprint: 12
-  Skipped Images: 10
-  Total URLs to Process: 22
+Timestamp: 2025-09-14 10:17:27 +07
 
 Domain: teleteeshirt.com
-  ktbtee: 16
-  albumcoverprint: 16
+  ktbtee: 8
+  albumcoverprint: 8
   Skipped Images: 0
-  Total URLs to Process: 16
+  Total URLs to Process: 8
 
 Domain: dalatshirt.com
-  albumcoverprint: 56
+  albumcoverprint: 24
   Skipped Images: 0
-  Total URLs to Process: 56
+  Total URLs to Process: 24
+
+Domain: arjomany.com
+  ktbtee: 21
+  Skipped Images: 34
+  Total URLs to Process: 55
+
+Domain: collectionpostertour.com
+  ktbtee: 38
+  Skipped Images: 24
+  Total URLs to Process: 62
+
+Domain: newshirtstore.com
+  albumcoverprint: 50
+  Skipped Images: 0
+  Total URLs to Process: 50
 
