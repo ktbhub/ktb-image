@@ -33,8 +33,7 @@
         "global_skip_keywords": [
           "Two-Sided",
           "2-Sided",
-          "sided",
-          "Sided"
+          "sided"
         ]
     },
     "mockup_sets": {
@@ -44,7 +43,7 @@
             "coords": { "x": 444, "y": 331, "w": 370, "h": 527 },
             "watermark_text": "[XU]",
             "title_prefix_to_add": "Official",
-            "title_suffix_to_add": "T Shirts"
+            "title_suffix_to_add": "Tshirts Sweater"
         },
         "whatwillwear": {
             "white": "https://raw.githubusercontent.com/ktbhub/ktb-image/main/mockup/mockup_white_8.jpg",
@@ -52,7 +51,7 @@
             "coords": { "x": 459, "y": 477, "w": 321, "h": 491 },
             "watermark_text": "[Whatwillwear]",
             "title_prefix_to_add": "Official",
-            "title_suffix_to_add": "Shirts"
+            "title_suffix_to_add": "TShirts Sweater"
         },
         "ktbtee": {
             "white": "https://raw.githubusercontent.com/ktbhub/ktb-image/main/mockup/mockup_white_9.jpg",
