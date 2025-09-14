@@ -326,7 +326,7 @@
                 "pattern": "-sweater.jpg",
                 "action": "generate",
                 "mockup_sets_to_use": ["albumcoverprint"],
-                "coords": { "x": 84, "y": 212, "w": 341, "h": 333 }
+                "coords": { "x": 84, "y": 213, "w": 320, "h": 382 }
             }
         ],
         "legendusashirt.com": [
