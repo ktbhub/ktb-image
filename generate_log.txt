@@ -1,18 +1,23 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-14 22:30:18 +07
+Timestamp: 2025-09-14 23:42:51 +07
 
-Domain: teehandus.com
-  albumcoverprint: 8
+Domain: teeworksusa.com
+  ktbtee: 28
   Skipped Images: 0
-  Total URLs to Process: 8
+  Total URLs to Process: 28
 
-Domain: lovingsquad.com
-  albumcoverprint: 30
-  Skipped Images: 0
-  Total URLs to Process: 30
+Domain: legendusashirt.com
+  albumcoverprint: 27
+  Skipped Images: 10
+  Total URLs to Process: 37
 
-Domain: newshirtstore.com
-  albumcoverprint: 1
+Domain: teeslocal.com
+  albumcoverprint: 20
+  Skipped Images: 2
+  Total URLs to Process: 22
+
+Domain: dalatshirt.com
+  albumcoverprint: 100
   Skipped Images: 0
-  Total URLs to Process: 1
+  Total URLs to Process: 100
 
