@@ -1,11 +1,8 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-14 11:39:18 +07
+Timestamp: 2025-09-14 14:33:56 +07
 
-Domain: teehandus.com
-  Skipped Images: 38
-  Total URLs to Process: 38
-
-Domain: melonashirt.com
-  Skipped Images: 23
-  Total URLs to Process: 23
+Domain: meredpremium.com
+  ktbtee: 71
+  Skipped Images: 33
+  Total URLs to Process: 104
 
