@@ -15,6 +15,8 @@
             "poster-portrait",
             "Poster-Canvas",
             "ladies-tee",
+            "t-shirt_classic",
+            "shirt_classic"
             "sweatshirt",
             "t-shirts",
             "t-shirt",
@@ -25,8 +27,7 @@
             "ornament",
             "poster",
             "shirt",
-            "Original",
-            "shirt_classic"
+            "Original"
         ],
         "global_skip_keywords": [
           "Two-Sided",
