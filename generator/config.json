@@ -102,13 +102,13 @@
             {
                 "pattern": "-poster.jpg",
                 "action": "generate",
-                "mockup_sets_to_use": ["albumcoverprint"],
+                "mockup_sets_to_use": ["ktbtee"],
                 "coords": { "x": 399, "y": 180, "w": 980, "h": 1405 }
             },
             {
                 "pattern": "-Mug-and-Ornament.jpg",
                 "action": "skip",
-                "mockup_sets_to_use": ["albumcoverprint"],
+                "mockup_sets_to_use": ["ktbtee"],
                 "coords": { "x": 285, "y": 734, "w": 374, "h": 512 }
             }
         ],
