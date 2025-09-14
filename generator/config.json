@@ -423,6 +423,15 @@
                 "coords": { "x": 274, "y": 173, "w": 447, "h": 523 }
             }
         ],
+        "serenashirt.com": [
+            {
+                "pattern": "-sweater.jpg",
+                "action": "generate",
+                "mockup_sets_to_use": ["albumcoverprint"],
+                "coords": { "x": 219, "y": 233, "w": 283, "h": 364 },
+                "skipWhite": true
+            }
+        ],
         "berrylittles.com": [
             {
                 "pattern": "-t-shirt.jpg",
