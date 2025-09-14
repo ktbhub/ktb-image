@@ -345,7 +345,7 @@
                 "pattern": "-T-shirt.jpg",
                 "action": "generate",
                 "mockup_sets_to_use": ["albumcoverprint"],
-                "coords": { "x": 313, "y": 152, "w": 429, "h": 449 }
+                "coords": { "x": 311, "y": 153, "w": 398, "h": 451 }
             },
             {
                 "pattern": "-Ladies.jpg",
