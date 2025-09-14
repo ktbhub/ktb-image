@@ -166,14 +166,6 @@
         ],
         "teeextra.com": [
             {
-                "pattern": "-Two-Side-Shirt.jpg",
-                "action": "skip"
-            },
-            {
-                "pattern": "-2-Sided-Shirt.jpg",
-                "action": "skip"
-            },
-            {
                 "pattern": "-Ornament.jpg",
                 "action": "generate",
                 "mockup_sets_to_use": ["ktbtee"],
@@ -200,14 +192,6 @@
                 "action": "skip"
             },
             {
-                "pattern": "-2-sided-sweater.jpg",
-                "action": "skip"
-            },
-            {
-                "pattern": "-2-sided-sweater.webp",
-                "action": "skip"
-            },
-            {
                 "pattern": "-shirt.webp",
                 "action": "skip"
             },
@@ -231,10 +215,6 @@
                 "mockup_sets_to_use": ["ktbtee"],
                 "coords": { "x": 295, "y": 198, "w": 420, "h": 489 },
                 "skipWhite": true
-            },
-            {
-                "pattern": "-2-sided-shirt.webp",
-                "action": "skip"
             },
             {
                 "pattern": "-sweater.webp",
