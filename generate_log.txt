@@ -1,13 +1,18 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-14 20:04:28 +07
+Timestamp: 2025-09-14 20:36:18 +07
 
-Domain: teespix.com
-  whatwillwear: 19
-  Skipped Images: 0
-  Total URLs to Process: 19
+Domain: capitoneshirt.com
+  Skipped Images: 5
+  Total URLs to Process: 5
 
 Domain: clickoneshirt.com
-  albumcoverprint: 21
+  albumcoverprint: 17
+  ktbtee: 31
   Skipped Images: 0
-  Total URLs to Process: 21
+  Total URLs to Process: 48
+
+Domain: lovingsquad.com
+  albumcoverprint: 99
+  Skipped Images: 0
+  Total URLs to Process: 99
 
