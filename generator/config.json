@@ -317,7 +317,7 @@
         "teehandus.com": [
             {
                 "pattern": "-long-sleeve.jpg",
-                "action": "generate",
+                "action": "skip",
                 "mockup_sets_to_use": ["albumcoverprint"],
                 "coords": { "x": 274, "y": 215, "w": 439, "h": 529 },
                 "skipWhite": true
