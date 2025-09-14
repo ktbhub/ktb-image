@@ -1,18 +1,18 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-14 15:42:39 +07
+Timestamp: 2025-09-14 16:32:56 +07
 
-Domain: dreameshirt.com
-  ktbtee: 25
-  Skipped Images: 0
-  Total URLs to Process: 25
+Domain: teehandus.com
+  albumcoverprint: 23
+  Skipped Images: 12
+  Total URLs to Process: 35
 
 Domain: designatshop.com
-  ktbtee: 66
+  ktbtee: 20
   Skipped Images: 0
-  Total URLs to Process: 66
+  Total URLs to Process: 20
 
 Domain: newshirtstore.com
-  albumcoverprint: 25
+  albumcoverprint: 27
   Skipped Images: 0
-  Total URLs to Process: 25
+  Total URLs to Process: 27
 
