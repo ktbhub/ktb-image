@@ -1,29 +1,11 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-14 10:17:27 +07
+Timestamp: 2025-09-14 11:39:18 +07
 
-Domain: teleteeshirt.com
-  ktbtee: 8
-  albumcoverprint: 8
-  Skipped Images: 0
-  Total URLs to Process: 8
+Domain: teehandus.com
+  Skipped Images: 38
+  Total URLs to Process: 38
 
-Domain: dalatshirt.com
-  albumcoverprint: 24
-  Skipped Images: 0
-  Total URLs to Process: 24
-
-Domain: arjomany.com
-  ktbtee: 21
-  Skipped Images: 34
-  Total URLs to Process: 55
-
-Domain: collectionpostertour.com
-  ktbtee: 38
-  Skipped Images: 24
-  Total URLs to Process: 62
-
-Domain: newshirtstore.com
-  albumcoverprint: 50
-  Skipped Images: 0
-  Total URLs to Process: 50
+Domain: melonashirt.com
+  Skipped Images: 23
+  Total URLs to Process: 23
 
