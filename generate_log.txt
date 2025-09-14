@@ -1,28 +1,8 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-14 21:36:05 +07
-
-Domain: geekteesus.com
-  Skipped Images: 75
-  Total URLs to Process: 75
-
-Domain: meredpremium.com
-  ktbtee: 14
-  Skipped Images: 0
-  Total URLs to Process: 14
-
-Domain: teespix.com
-  whatwillwear: 16
-  Skipped Images: 0
-  Total URLs to Process: 16
-
-Domain: teleteeshirt.com
-  ktbtee: 32
-  albumcoverprint: 32
-  Skipped Images: 0
-  Total URLs to Process: 32
+Timestamp: 2025-09-14 21:42:10 +07
 
 Domain: lovingsquad.com
-  albumcoverprint: 87
+  albumcoverprint: 25
   Skipped Images: 0
-  Total URLs to Process: 87
+  Total URLs to Process: 25
 
