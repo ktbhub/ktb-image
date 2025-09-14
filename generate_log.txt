@@ -1,8 +1,18 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-14 21:42:10 +07
+Timestamp: 2025-09-14 22:30:18 +07
+
+Domain: teehandus.com
+  albumcoverprint: 8
+  Skipped Images: 0
+  Total URLs to Process: 8
 
 Domain: lovingsquad.com
-  albumcoverprint: 25
+  albumcoverprint: 30
   Skipped Images: 0
-  Total URLs to Process: 25
+  Total URLs to Process: 30
+
+Domain: newshirtstore.com
+  albumcoverprint: 1
+  Skipped Images: 0
+  Total URLs to Process: 1
 
