@@ -1,18 +1,12 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-14 20:36:18 +07
+Timestamp: 2025-09-14 20:44:30 +07
 
 Domain: capitoneshirt.com
-  Skipped Images: 5
-  Total URLs to Process: 5
-
-Domain: clickoneshirt.com
-  albumcoverprint: 17
-  ktbtee: 31
-  Skipped Images: 0
-  Total URLs to Process: 48
+  Skipped Images: 82
+  Total URLs to Process: 82
 
 Domain: lovingsquad.com
-  albumcoverprint: 99
-  Skipped Images: 0
-  Total URLs to Process: 99
+  albumcoverprint: 69
+  Skipped Images: 2
+  Total URLs to Process: 71
 
