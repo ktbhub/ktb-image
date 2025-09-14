@@ -32,10 +32,8 @@
         "global_skip_keywords": [
           "Two-Sided",
           "2-Sided",
-          "Backside",
-          "Front",
-          "Both-Sides",
-          "Doppel-Seite"
+          "sided",
+          "Sided"
         ]
     },
     "mockup_sets": {
@@ -290,7 +288,8 @@
                 "pattern": "-shirt.jpg",
                 "action": "generate",
                 "mockup_sets_to_use": ["albumcoverprint"],
-                "coords": { "x": 364, "y": 233, "w": 298, "h": 387 }
+                "coords": { "x": 364, "y": 233, "w": 298, "h": 387 },
+                "skipBlack": true
             }
         ],
         "fanaticity.com": [
@@ -307,6 +306,12 @@
                 "action": "generate",
                 "mockup_sets_to_use": ["albumcoverprint"],
                 "coords": { "x": 218, "y": 136, "w": 313, "h": 438 }
+            },
+            {
+                "pattern": "-Poster.jpg",
+                "action": "generate",
+                "mockup_sets_to_use": ["albumcoverprint"],
+                "coords": { "x": 218, "y": 136, "w": 313, "h": 438 }
             }
         ],
         "teehandus.com": [
@@ -316,6 +321,12 @@
                 "mockup_sets_to_use": ["albumcoverprint"],
                 "coords": { "x": 274, "y": 215, "w": 439, "h": 529 },
                 "skipWhite": true
+            },
+            {
+                "pattern": "-sweater.jpg",
+                "action": "generate",
+                "mockup_sets_to_use": ["albumcoverprint"],
+                "coords": { "x": 84, "y": 212, "w": 341, "h": 333 }
             }
         ],
         "legendusashirt.com": [
