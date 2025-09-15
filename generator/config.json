@@ -241,7 +241,7 @@
                 "pattern": "-ornament.webp",
                 "action": "generate",
                 "mockup_sets_to_use": ["ktbtee"],
-                "coords": { "x": 238, "y": 202, "w": 517, "h": 626 }
+                "coords": { "x": 232, "y": 196, "w": 571, "h": 619 }
             }
         ],
         "clickoneshirt.com": [
