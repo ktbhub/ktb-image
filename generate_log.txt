@@ -1,29 +1,22 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-15 10:34:08 +07
+Timestamp: 2025-09-15 11:00:51 +07
 
-Domain: techteesusa.com
-  ktbtee: 145
-  whatwillwear: 145
+Domain: meredpremium.com
+  ktbtee: 6
   Skipped Images: 2
-  Total URLs to Process: 147
+  Total URLs to Process: 8
 
-Domain: teleteeshirt.com
-  ktbtee: 28
-  albumcoverprint: 28
+Domain: dreameshirt.com
+  ktbtee: 19
   Skipped Images: 0
-  Total URLs to Process: 28
+  Total URLs to Process: 19
 
 Domain: melonashirt.com
-  Skipped Images: 45
-  Total URLs to Process: 45
-
-Domain: arjomany.com
-  ktbtee: 38
-  Skipped Images: 17
-  Total URLs to Process: 55
+  Skipped Images: 19
+  Total URLs to Process: 19
 
 Domain: collectionpostertour.com
-  ktbtee: 61
-  Skipped Images: 21
-  Total URLs to Process: 82
+  ktbtee: 17
+  Skipped Images: 17
+  Total URLs to Process: 34
 
