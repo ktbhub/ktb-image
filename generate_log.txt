@@ -1,31 +1,17 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-15 14:06:16 +07
+Timestamp: 2025-09-15 14:36:12 +07
 
 Domain: geekteesus.com
-  Skipped Images: 21
-  Total URLs to Process: 21
-
-Domain: teeworksusa.com
-  Skipped Images: 71
-  Total URLs to Process: 71
+  Skipped Images: 13
+  Total URLs to Process: 13
 
 Domain: teeextra.com
-  ktbtee: 70
-  Skipped Images: 2
-  Total URLs to Process: 72
-
-Domain: eteeclothing.com
-  ktbtee: 21
-  Skipped Images: 4
-  Total URLs to Process: 25
-
-Domain: teehandus.com
-  albumcoverprint: 49
-  Skipped Images: 2
-  Total URLs to Process: 51
+  ktbtee: 5
+  Skipped Images: 0
+  Total URLs to Process: 5
 
 Domain: newshirtstore.com
-  albumcoverprint: 100
+  albumcoverprint: 50
   Skipped Images: 0
-  Total URLs to Process: 100
+  Total URLs to Process: 50
 
