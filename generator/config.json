@@ -322,13 +322,13 @@
             {
                 "pattern": "-Shirts-men-shirt.webp",
                 "action": "generate",
-                "mockup_sets_to_use": ["albumcoverprint"],
+                "mockup_sets_to_use": ["ktbtee"],
                 "coords": { "x": 220, "y": 120, "w": 321, "h": 435 }
             },
             {
                 "pattern": "-Shirts-men-shirt.jpg",
                 "action": "generate",
-                "mockup_sets_to_use": ["albumcoverprint"],
+                "mockup_sets_to_use": ["ktbtee"],
                 "coords": { "x": 220, "y": 120, "w": 321, "h": 435 }
             }
         ],
