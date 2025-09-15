@@ -1,23 +1,27 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-14 23:42:51 +07
+Timestamp: 2025-09-15 08:24:04 +07
 
-Domain: teeworksusa.com
-  ktbtee: 28
+Domain: eteeclothing.com
+  ktbtee: 60
   Skipped Images: 0
-  Total URLs to Process: 28
+  Total URLs to Process: 60
 
-Domain: legendusashirt.com
-  albumcoverprint: 27
-  Skipped Images: 10
-  Total URLs to Process: 37
+Domain: nowbestshirt.com
+  ktbtee: 74
+  Skipped Images: 0
+  Total URLs to Process: 74
+
+Domain: fanaticity.com
+  whatwillwear: 87
+  Skipped Images: 0
+  Total URLs to Process: 87
 
 Domain: teeslocal.com
-  albumcoverprint: 20
-  Skipped Images: 2
-  Total URLs to Process: 22
-
-Domain: dalatshirt.com
-  albumcoverprint: 100
+  albumcoverprint: 8
   Skipped Images: 0
-  Total URLs to Process: 100
+  Total URLs to Process: 8
+
+Domain: designatshop.com
+  Skipped Images: 2
+  Total URLs to Process: 2
 
