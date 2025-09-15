@@ -1,56 +1,55 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-15 12:01:46 +07
+Timestamp: 2025-09-15 12:56:46 +07
 
-Domain: techteesusa.com
-  ktbtee: 11
-  whatwillwear: 11
-  Skipped Images: 0
-  Total URLs to Process: 11
+Domain: geekteesus.com
+  Skipped Images: 21
+  Total URLs to Process: 21
 
 Domain: teeworksusa.com
-  ktbtee: 18
-  albumcoverprint: 18
-  Skipped Images: 0
-  Total URLs to Process: 18
+  ktbtee: 59
+  Skipped Images: 24
+  Total URLs to Process: 83
 
-Domain: berrylittles.com
-  albumcoverprint: 11
-  Skipped Images: 0
-  Total URLs to Process: 11
+Domain: eteeclothing.com
+  ktbtee: 57
+  Skipped Images: 31
+  Total URLs to Process: 88
 
-Domain: dreameshirt.com
-  ktbtee: 10
+Domain: serenashirt.com
+  albumcoverprint: 13
+  Skipped Images: 12
+  Total URLs to Process: 25
+
+Domain: legendusashirt.com
+  albumcoverprint: 25
+  Skipped Images: 6
+  Total URLs to Process: 31
+
+Domain: teehandus.com
+  albumcoverprint: 46
+  Skipped Images: 2
+  Total URLs to Process: 48
+
+Domain: capitoneshirt.com
+  Skipped Images: 89
+  Total URLs to Process: 89
+
+Domain: clickoneshirt.com
+  albumcoverprint: 10
   Skipped Images: 0
   Total URLs to Process: 10
 
-Domain: milkywayshirt.com
-  albumcoverprint: 16
+Domain: arjomany.com
+  ktbtee: 4
+  Skipped Images: 4
+  Total URLs to Process: 8
+
+Domain: collectionpostertour.com
+  Skipped Images: 5
+  Total URLs to Process: 5
+
+Domain: newshirtstore.com
+  albumcoverprint: 50
   Skipped Images: 0
-  Total URLs to Process: 16
-
-Domain: teespix.com
-  whatwillwear: 95
-  Skipped Images: 0
-  Total URLs to Process: 95
-
-Domain: serenashirt.com
-  albumcoverprint: 22
-  Skipped Images: 20
-  Total URLs to Process: 42
-
-Domain: clickoneshirt.com
-  albumcoverprint: 1
-  ktbtee: 22
-  Skipped Images: 7
-  Total URLs to Process: 30
-
-Domain: teeslocal.com
-  whatwillwear: 28
-  Skipped Images: 0
-  Total URLs to Process: 28
-
-Domain: designatshop.com
-  ktbtee: 84
-  Skipped Images: 0
-  Total URLs to Process: 84
+  Total URLs to Process: 50
 
