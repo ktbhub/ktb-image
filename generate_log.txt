@@ -1,22 +1,56 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-15 11:00:51 +07
+Timestamp: 2025-09-15 12:01:46 +07
 
-Domain: meredpremium.com
-  ktbtee: 6
-  Skipped Images: 2
-  Total URLs to Process: 8
+Domain: techteesusa.com
+  ktbtee: 11
+  whatwillwear: 11
+  Skipped Images: 0
+  Total URLs to Process: 11
+
+Domain: teeworksusa.com
+  ktbtee: 18
+  albumcoverprint: 18
+  Skipped Images: 0
+  Total URLs to Process: 18
+
+Domain: berrylittles.com
+  albumcoverprint: 11
+  Skipped Images: 0
+  Total URLs to Process: 11
 
 Domain: dreameshirt.com
-  ktbtee: 19
+  ktbtee: 10
   Skipped Images: 0
-  Total URLs to Process: 19
+  Total URLs to Process: 10
 
-Domain: melonashirt.com
-  Skipped Images: 19
-  Total URLs to Process: 19
+Domain: milkywayshirt.com
+  albumcoverprint: 16
+  Skipped Images: 0
+  Total URLs to Process: 16
 
-Domain: collectionpostertour.com
-  ktbtee: 17
-  Skipped Images: 17
-  Total URLs to Process: 34
+Domain: teespix.com
+  whatwillwear: 95
+  Skipped Images: 0
+  Total URLs to Process: 95
+
+Domain: serenashirt.com
+  albumcoverprint: 22
+  Skipped Images: 20
+  Total URLs to Process: 42
+
+Domain: clickoneshirt.com
+  albumcoverprint: 1
+  ktbtee: 22
+  Skipped Images: 7
+  Total URLs to Process: 30
+
+Domain: teeslocal.com
+  whatwillwear: 28
+  Skipped Images: 0
+  Total URLs to Process: 28
+
+Domain: designatshop.com
+  ktbtee: 84
+  Skipped Images: 0
+  Total URLs to Process: 84
 
