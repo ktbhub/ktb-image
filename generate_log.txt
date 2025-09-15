@@ -1,27 +1,29 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-15 08:24:04 +07
+Timestamp: 2025-09-15 10:34:08 +07
 
-Domain: eteeclothing.com
-  ktbtee: 60
-  Skipped Images: 0
-  Total URLs to Process: 60
-
-Domain: nowbestshirt.com
-  ktbtee: 74
-  Skipped Images: 0
-  Total URLs to Process: 74
-
-Domain: fanaticity.com
-  whatwillwear: 87
-  Skipped Images: 0
-  Total URLs to Process: 87
-
-Domain: teeslocal.com
-  albumcoverprint: 8
-  Skipped Images: 0
-  Total URLs to Process: 8
-
-Domain: designatshop.com
+Domain: techteesusa.com
+  ktbtee: 145
+  whatwillwear: 145
   Skipped Images: 2
-  Total URLs to Process: 2
+  Total URLs to Process: 147
+
+Domain: teleteeshirt.com
+  ktbtee: 28
+  albumcoverprint: 28
+  Skipped Images: 0
+  Total URLs to Process: 28
+
+Domain: melonashirt.com
+  Skipped Images: 45
+  Total URLs to Process: 45
+
+Domain: arjomany.com
+  ktbtee: 38
+  Skipped Images: 17
+  Total URLs to Process: 55
+
+Domain: collectionpostertour.com
+  ktbtee: 61
+  Skipped Images: 21
+  Total URLs to Process: 82
 
