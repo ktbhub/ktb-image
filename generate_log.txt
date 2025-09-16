@@ -1,37 +1,48 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-16 11:51:52 +07
+Timestamp: 2025-09-16 13:10:47 +07
 
-Domain: berrylittles.com
-  albumcoverprint: 9
-  Skipped Images: 0
-  Total URLs to Process: 9
+Domain: meredpremium.com
+  ktbtee: 3
+  Skipped Images: 1
+  Total URLs to Process: 4
 
-Domain: teespix.com
-  whatwillwear: 99
+Domain: teeextra.com
+  ktbtee: 69
   Skipped Images: 0
+  Total URLs to Process: 69
+
+Domain: eteeclothing.com
+  ktbtee: 91
+  Skipped Images: 8
   Total URLs to Process: 99
 
-Domain: legendusashirt.com
-  albumcoverprint: 45
-  Skipped Images: 8
-  Total URLs to Process: 53
+Domain: nowbestshirt.com
+  ktbtee: 106
+  Skipped Images: 2
+  Total URLs to Process: 108
 
-Domain: clickoneshirt.com
-  Skipped Images: 5
-  Total URLs to Process: 5
+Domain: serenashirt.com
+  albumcoverprint: 33
+  Skipped Images: 34
+  Total URLs to Process: 67
 
-Domain: arjomany.com
-  ktbtee: 22
-  Skipped Images: 7
-  Total URLs to Process: 29
+Domain: teehandus.com
+  albumcoverprint: 74
+  Skipped Images: 4
+  Total URLs to Process: 78
 
-Domain: collectionpostertour.com
-  ktbtee: 5
-  Skipped Images: 15
-  Total URLs to Process: 20
+Domain: teeslocal.com
+  albumcoverprint: 20
+  Skipped Images: 10
+  Total URLs to Process: 30
+
+Domain: designatshop.com
+  ktbtee: 82
+  Skipped Images: 1
+  Total URLs to Process: 83
 
 Domain: newshirtstore.com
-  albumcoverprint: 30
+  albumcoverprint: 100
   Skipped Images: 0
-  Total URLs to Process: 30
+  Total URLs to Process: 100
 
