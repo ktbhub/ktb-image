@@ -1,17 +1,13 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-16 18:37:07 +07
+Timestamp: 2025-09-16 19:07:34 +07
 
-Domain: teeworksusa.com
-  Skipped Images: 48
-  Total URLs to Process: 48
-
-Domain: teeextra.com
-  ktbtee: 15
+Domain: teespix.com
+  whatwillwear: 108
   Skipped Images: 0
-  Total URLs to Process: 15
+  Total URLs to Process: 108
 
-Domain: serenashirt.com
-  albumcoverprint: 2
-  Skipped Images: 1
-  Total URLs to Process: 3
+Domain: clickoneshirt.com
+  ktbtee: 89
+  Skipped Images: 0
+  Total URLs to Process: 89
 
