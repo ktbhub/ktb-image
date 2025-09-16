@@ -1,29 +1,24 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-16 09:27:43 +07
+Timestamp: 2025-09-16 10:56:45 +07
 
-Domain: fanaticity.com
-  whatwillwear: 125
-  Skipped Images: 0
-  Total URLs to Process: 125
+Domain: techteesusa.com
+  ktbtee: 36
+  whatwillwear: 36
+  Skipped Images: 2
+  Total URLs to Process: 38
 
-Domain: teehandus.com
-  albumcoverprint: 1
+Domain: dreameshirt.com
+  ktbtee: 26
   Skipped Images: 0
-  Total URLs to Process: 1
-
-Domain: teleteeshirt.com
-  ktbtee: 8
-  albumcoverprint: 8
-  Skipped Images: 0
-  Total URLs to Process: 8
+  Total URLs to Process: 26
 
 Domain: arjomany.com
-  ktbtee: 20
-  Skipped Images: 0
-  Total URLs to Process: 20
+  ktbtee: 2
+  Skipped Images: 1
+  Total URLs to Process: 3
 
 Domain: collectionpostertour.com
-  ktbtee: 16
-  Skipped Images: 18
-  Total URLs to Process: 34
+  ktbtee: 12
+  Skipped Images: 12
+  Total URLs to Process: 24
 
