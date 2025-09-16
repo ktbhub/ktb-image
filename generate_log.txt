@@ -1,12 +1,18 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-16 20:24:13 +07
+Timestamp: 2025-09-16 20:52:43 +07
 
 Domain: teeworksusa.com
-  Skipped Images: 47
-  Total URLs to Process: 47
+  Skipped Images: 38
+  Total URLs to Process: 38
 
 Domain: uscraftedtees.com
-  albumcoverprint: 86
+  albumcoverprint: 35
   Skipped Images: 0
-  Total URLs to Process: 86
+  Total URLs to Process: 35
+
+Domain: teleteeshirt.com
+  ktbtee: 32
+  albumcoverprint: 32
+  Skipped Images: 0
+  Total URLs to Process: 32
 
