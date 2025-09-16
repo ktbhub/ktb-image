@@ -1,14 +1,8 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-16 21:15:32 +07
+Timestamp: 2025-09-16 21:38:26 +07
 
-Domain: uscraftedtees.com
-  albumcoverprint: 22
+Domain: dalatshirt.com
+  albumcoverprint: 30
   Skipped Images: 0
-  Total URLs to Process: 22
-
-Domain: teleteeshirt.com
-  ktbtee: 8
-  albumcoverprint: 8
-  Skipped Images: 0
-  Total URLs to Process: 8
+  Total URLs to Process: 30
 
