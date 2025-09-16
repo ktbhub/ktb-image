@@ -1,13 +1,18 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-16 19:07:34 +07
+Timestamp: 2025-09-16 19:35:41 +07
 
-Domain: teespix.com
-  whatwillwear: 108
-  Skipped Images: 0
-  Total URLs to Process: 108
+Domain: teeworksusa.com
+  Skipped Images: 45
+  Total URLs to Process: 45
+
+Domain: nowbestshirt.com
+  ktbtee: 93
+  Skipped Images: 1
+  Total URLs to Process: 94
 
 Domain: clickoneshirt.com
-  ktbtee: 89
+  albumcoverprint: 90
+  ktbtee: 10
   Skipped Images: 0
-  Total URLs to Process: 89
+  Total URLs to Process: 100
 
