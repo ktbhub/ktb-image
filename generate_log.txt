@@ -1,8 +1,8 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-16 15:55:47 +07
+Timestamp: 2025-09-16 16:16:35 +07
 
-Domain: designatshop.com
-  ktbtee: 18
+Domain: clickoneshirt.com
+  albumcoverprint: 4
   Skipped Images: 0
-  Total URLs to Process: 18
+  Total URLs to Process: 4
 
