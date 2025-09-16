@@ -1,8 +1,45 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-16 16:16:35 +07
+Timestamp: 2025-09-16 18:16:57 +07
 
-Domain: clickoneshirt.com
-  albumcoverprint: 4
+Domain: techteesusa.com
+  ktbtee: 109
+  whatwillwear: 109
+  Skipped Images: 1
+  Total URLs to Process: 110
+
+Domain: eteeclothing.com
+  ktbtee: 83
   Skipped Images: 0
-  Total URLs to Process: 4
+  Total URLs to Process: 83
+
+Domain: serenashirt.com
+  albumcoverprint: 48
+  Skipped Images: 26
+  Total URLs to Process: 74
+
+Domain: teehandus.com
+  albumcoverprint: 85
+  Skipped Images: 6
+  Total URLs to Process: 91
+
+Domain: capitoneshirt.com
+  ktbtee: 58
+  Skipped Images: 42
+  Total URLs to Process: 100
+
+Domain: teleteeshirt.com
+  ktbtee: 32
+  albumcoverprint: 32
+  Skipped Images: 0
+  Total URLs to Process: 32
+
+Domain: teeslocal.com
+  albumcoverprint: 12
+  Skipped Images: 10
+  Total URLs to Process: 22
+
+Domain: designatshop.com
+  ktbtee: 84
+  Skipped Images: 0
+  Total URLs to Process: 84
 
