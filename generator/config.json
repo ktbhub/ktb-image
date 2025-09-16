@@ -57,7 +57,7 @@
         "ktbtee": {
             "white": "https://raw.githubusercontent.com/ktbhub/ktb-image/main/mockup/mockup_ktbtee_white.webp",
             "black": "https://raw.githubusercontent.com/ktbhub/ktb-image/main/mockup/mockup_ktbtee_black.webp",
-            "coords": { "x": 469, "y": 503, "w": 364, "h": 542 },
+            "coords": { "x": 362, "y": 254, "w": 424, "h": 582 },
             "watermark_text": "[KTB]",
             "title_prefix_to_add": "Official",
             "title_suffix_to_add": "TShirt Sweatshirt"
