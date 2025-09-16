@@ -1,18 +1,29 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-16 22:59:59 +07
+Timestamp: 2025-09-16 23:42:35 +07
 
-Domain: nowbestshirt.com
-  ktbtee: 27
+Domain: teeworksusa.com
+  Skipped Images: 2
+  Total URLs to Process: 2
+
+Domain: teeextra.com
+  whatwillwear: 6
+  ktbtee: 56
+  Skipped Images: 2
+  Total URLs to Process: 64
+
+Domain: eteeclothing.com
+  ktbtee: 9
   Skipped Images: 0
-  Total URLs to Process: 27
+  Total URLs to Process: 9
 
 Domain: legendusashirt.com
-  Skipped Images: 12
-  Total URLs to Process: 12
+  albumcoverprint: 58
+  Skipped Images: 40
+  Total URLs to Process: 98
 
 Domain: lovingsquad.com
-  albumcoverprint: 31
-  ktbtee: 69
+  ktbtee: 79
+  albumcoverprint: 21
   Skipped Images: 0
   Total URLs to Process: 100
 
