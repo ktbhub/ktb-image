@@ -1,8 +1,18 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-16 22:28:53 +07
+Timestamp: 2025-09-16 22:59:59 +07
+
+Domain: nowbestshirt.com
+  ktbtee: 27
+  Skipped Images: 0
+  Total URLs to Process: 27
+
+Domain: legendusashirt.com
+  Skipped Images: 12
+  Total URLs to Process: 12
 
 Domain: lovingsquad.com
-  albumcoverprint: 100
+  albumcoverprint: 31
+  ktbtee: 69
   Skipped Images: 0
   Total URLs to Process: 100
 
