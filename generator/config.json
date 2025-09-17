@@ -37,7 +37,9 @@
           "Two-Side",
           "2-Side",
           "sided",
-          "side"
+          "side",
+          "Front-Back",
+          "Front"
         ]
     },
     "mockup_sets": {
