@@ -1,32 +1,23 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-17 19:23:31 +07
+Timestamp: 2025-09-17 19:39:19 +07
 
-Domain: teespix.com
-  ktbtee: 120
-  Skipped Images: 1
-  Total URLs to Process: 121
-
-Domain: nowbestshirt.com
-  ktbtee: 196
+Domain: uscraftedtees.com
+  albumcoverprint: 59
   Skipped Images: 2
-  Total URLs to Process: 198
-
-Domain: capitoneshirt.com
-  Skipped Images: 48
-  Total URLs to Process: 48
+  Total URLs to Process: 62
 
 Domain: teeslocal.com
-  albumcoverprint: 45
-  Skipped Images: 77
-  Total URLs to Process: 122
+  albumcoverprint: 13
+  Skipped Images: 4
+  Total URLs to Process: 17
 
 Domain: lovingsquad.com
-  albumcoverprint: 41
-  Skipped Images: 0
-  Total URLs to Process: 41
+  albumcoverprint: 97
+  Skipped Images: 2
+  Total URLs to Process: 99
 
 Domain: newshirtstore.com
-  albumcoverprint: 40
+  albumcoverprint: 10
   Skipped Images: 0
-  Total URLs to Process: 40
+  Total URLs to Process: 10
 
