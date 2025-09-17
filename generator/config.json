@@ -29,7 +29,8 @@
             "poster",
             "shirt",
             "Original",
-            "Originals"
+            "Originals",
+            "Unisex"
         ],
         "global_skip_keywords": [
           "Two-Sided",
@@ -39,7 +40,8 @@
           "sided",
           "side",
           "Front-Back",
-          "Front"
+          "Front".
+          "Sides"
         ]
     },
     "mockup_sets": {
