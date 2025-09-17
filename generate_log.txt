@@ -1,13 +1,30 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-17 20:23:31 +07
+Timestamp: 2025-09-17 20:58:00 +07
 
-Domain: lovingsquad.com
-  albumcoverprint: 62
-  Skipped Images: 5
-  Total URLs to Process: 67
+Domain: teeworksusa.com
+  ktbtee: 46
+  whatwillwear: 9
+  Skipped Images: 0
+  Total URLs to Process: 46
+
+Domain: clickoneshirt.com
+  ktbtee: 92
+  Skipped Images: 0
+  Total URLs to Process: 92
+
+Domain: teleteeshirt.com
+  ktbtee: 24
+  albumcoverprint: 24
+  Skipped Images: 0
+  Total URLs to Process: 24
+
+Domain: dalatshirt.com
+  albumcoverprint: 90
+  Skipped Images: 0
+  Total URLs to Process: 90
 
 Domain: newshirtstore.com
-  albumcoverprint: 10
-  Skipped Images: 0
-  Total URLs to Process: 10
+  albumcoverprint: 39
+  Skipped Images: 1
+  Total URLs to Process: 40
 
