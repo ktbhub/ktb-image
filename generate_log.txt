@@ -1,13 +1,13 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-17 08:45:22 +07
+Timestamp: 2025-09-17 09:31:45 +07
 
 Domain: geekteesus.com
-  Skipped Images: 11
-  Total URLs to Process: 11
+  Skipped Images: 54
+  Total URLs to Process: 54
 
-Domain: techteesusa.com
-  ktbtee: 3
-  whatwillwear: 3
+Domain: teleteeshirt.com
+  ktbtee: 21
+  albumcoverprint: 21
   Skipped Images: 0
-  Total URLs to Process: 3
+  Total URLs to Process: 21
 
