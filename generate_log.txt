@@ -1,13 +1,8 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-17 15:44:42 +07
-
-Domain: teehandus.com
-  albumcoverprint: 45
-  Skipped Images: 12
-  Total URLs to Process: 57
+Timestamp: 2025-09-17 15:56:53 +07
 
 Domain: designatshop.com
-  ktbtee: 16
+  ktbtee: 25
   Skipped Images: 0
-  Total URLs to Process: 16
+  Total URLs to Process: 25
 
