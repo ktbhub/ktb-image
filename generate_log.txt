@@ -1,50 +1,13 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-17 15:38:31 +07
-
-Domain: geekteesus.com
-  Skipped Images: 24
-  Total URLs to Process: 24
-
-Domain: meredpremium.com
-  ktbtee: 95
-  Skipped Images: 32
-  Total URLs to Process: 127
-
-Domain: dreameshirt.com
-  ktbtee: 18
-  Skipped Images: 0
-  Total URLs to Process: 18
-
-Domain: legendusashirt.com
-  Skipped Images: 45
-  Total URLs to Process: 45
+Timestamp: 2025-09-17 15:44:42 +07
 
 Domain: teehandus.com
-  albumcoverprint: 97
-  Skipped Images: 3
-  Total URLs to Process: 100
-
-Domain: capitoneshirt.com
-  ktbtee: 2
-  Skipped Images: 3
-  Total URLs to Process: 5
-
-Domain: teeslocal.com
-  albumcoverprint: 13
-  Skipped Images: 187
-  Total URLs to Process: 200
+  albumcoverprint: 45
+  Skipped Images: 12
+  Total URLs to Process: 57
 
 Domain: designatshop.com
-  ktbtee: 91
+  ktbtee: 16
   Skipped Images: 0
-  Total URLs to Process: 91
-
-Domain: neoteeco.com
-  Skipped Images: 13
-  Total URLs to Process: 13
-
-Domain: newshirtstore.com
-  albumcoverprint: 17
-  Skipped Images: 0
-  Total URLs to Process: 17
+  Total URLs to Process: 16
 
