@@ -34,7 +34,10 @@
         "global_skip_keywords": [
           "Two-Sided",
           "2-Sided",
-          "sided"
+          "Two-Side",
+          "2-Side",
+          "sided",
+          "side",
         ]
     },
     "mockup_sets": {
