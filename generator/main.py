@@ -7,6 +7,7 @@ from datetime import datetime
 import pytz
 from PIL import Image, ImageDraw, ImageFont
 from io import BytesIO
+import re
 #Đây là bản update test thử chức năng magicwand đa điểm, nếu không work có thể back lại version backup lưu ở PCHome 10:33PM 9.10.25
 # --- Cấu hình ---
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -20,13 +21,22 @@ MAX_REPO_SIZE_MB = 900
 
 def should_globally_skip(filename, skip_keywords):
     """
-    Kiểm tra xem tên tệp có chứa bất kỳ từ khóa nào trong danh sách bỏ qua toàn cục hay không.
-    Hàm này không phân biệt chữ hoa/thường.
+    Kiểm tra xem tên tệp có chứa bất kỳ TỪ KHÓA NGUYÊN VẸN nào 
+    trong danh sách bỏ qua toàn cục hay không.
+    Hàm này không phân biệt chữ hoa/thường và chỉ khớp với từ riêng lẻ.
     """
-    lower_filename = filename.lower()
     for keyword in skip_keywords:
-        if keyword.lower() in lower_filename:
+        # Tạo một biểu thức chính quy (regex) để tìm từ khóa như một từ độc lập.
+        # \b là "word boundary" (ranh giới của một từ), đảm bảo nó không phải là một phần của từ khác.
+        # re.escape để xử lý các ký tự đặc biệt nếu có trong keyword (ví dụ: '2-Sided').
+        pattern = r'\b' + re.escape(keyword) + r'\b'
+        
+        # re.search tìm kiếm pattern ở bất kỳ đâu trong tên tệp, không phân biệt hoa/thường.
+        if re.search(pattern, filename, re.IGNORECASE):
+            # In ra log để biết chính xác từ khóa nào đã gây ra việc skip
+            print(f"Skipping (Global): '{filename}' chứa từ khóa bị cấm '{keyword}'.")
             return True
+            
     return False
 
 def get_trimmed_image_with_padding(image, max_padding_x=40, max_padding_y=20):
