@@ -295,7 +295,7 @@
             },
             {
                 "pattern": "-T-Shirt.jpg",
-                "action": "generate",
+                "action": "skip",
                 "mockup_sets_to_use": ["ktbtee"],
                 "coords": { "x": 395, "y": 159, "w": 353, "h": 476 }
             }
