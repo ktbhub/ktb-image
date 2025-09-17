@@ -288,7 +288,7 @@
             },
             {
                 "pattern": "-shirt.jpg",
-                "action": "generate",
+                "action": "skip",
                 "mockup_sets_to_use": ["albumcoverprint"],
                 "coords": { "x": 364, "y": 233, "w": 298, "h": 387 },
                 "skipBlack": true
