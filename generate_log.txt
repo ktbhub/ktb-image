@@ -1,53 +1,32 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-17 17:52:10 +07
-
-Domain: geekteesus.com
-  Skipped Images: 2
-  Total URLs to Process: 2
-
-Domain: techteesusa.com
-  ktbtee: 72
-  whatwillwear: 72
-  Skipped Images: 0
-  Total URLs to Process: 72
+Timestamp: 2025-09-17 18:10:06 +07
 
 Domain: teeworksusa.com
-  ktbtee: 31
-  Skipped Images: 0
-  Total URLs to Process: 31
+  ktbtee: 30
+  Skipped Images: 16
+  Total URLs to Process: 46
 
-Domain: eteeclothing.com
-  ktbtee: 57
-  Skipped Images: 1
-  Total URLs to Process: 58
-
-Domain: serenashirt.com
-  albumcoverprint: 49
-  Skipped Images: 99
-  Total URLs to Process: 148
-
-Domain: capitoneshirt.com
-  ktbtee: 92
-  Skipped Images: 8
-  Total URLs to Process: 100
-
-Domain: teleteeshirt.com
-  ktbtee: 75
-  albumcoverprint: 75
-  Skipped Images: 0
+Domain: teeextra.com
+  ktbtee: 62
+  Skipped Images: 13
   Total URLs to Process: 75
 
-Domain: teeslocal.com
-  Skipped Images: 19
-  Total URLs to Process: 19
-
-Domain: lovingsquad.com
-  albumcoverprint: 54
+Domain: nowbestshirt.com
+  ktbtee: 6
   Skipped Images: 0
-  Total URLs to Process: 54
+  Total URLs to Process: 6
 
-Domain: designatshop.com
-  ktbtee: 1
-  Skipped Images: 0
+Domain: capitoneshirt.com
+  Skipped Images: 1
   Total URLs to Process: 1
+
+Domain: teleteeshirt.com
+  ktbtee: 21
+  albumcoverprint: 21
+  Skipped Images: 0
+  Total URLs to Process: 21
+
+Domain: teeslocal.com
+  Skipped Images: 65
+  Total URLs to Process: 65
 
