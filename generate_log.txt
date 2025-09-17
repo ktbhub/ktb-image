@@ -1,33 +1,37 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-17 12:10:06 +07
+Timestamp: 2025-09-17 12:56:30 +07
 
 Domain: teeextra.com
-  ktbtee: 8
+  ktbtee: 53
   Skipped Images: 0
-  Total URLs to Process: 8
+  Total URLs to Process: 53
 
 Domain: eteeclothing.com
-  ktbtee: 10
-  Skipped Images: 14
-  Total URLs to Process: 24
-
-Domain: serenashirt.com
-  albumcoverprint: 32
-  Skipped Images: 31
+  ktbtee: 46
+  Skipped Images: 17
   Total URLs to Process: 63
 
+Domain: nowbestshirt.com
+  ktbtee: 94
+  Skipped Images: 13
+  Total URLs to Process: 107
+
+Domain: serenashirt.com
+  albumcoverprint: 1
+  Skipped Images: 3
+  Total URLs to Process: 4
+
+Domain: legendusashirt.com
+  Skipped Images: 22
+  Total URLs to Process: 22
+
 Domain: capitoneshirt.com
-  ktbtee: 56
+  ktbtee: 40
   Skipped Images: 0
-  Total URLs to Process: 56
+  Total URLs to Process: 40
 
-Domain: neoteeco.com
-  albumcoverprint: 13
+Domain: designatshop.com
+  ktbtee: 4
   Skipped Images: 0
-  Total URLs to Process: 13
-
-Domain: newshirtstore.com
-  albumcoverprint: 50
-  Skipped Images: 0
-  Total URLs to Process: 50
+  Total URLs to Process: 4
 
