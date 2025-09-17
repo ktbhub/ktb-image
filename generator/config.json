@@ -182,7 +182,7 @@
             {
                 "pattern": "-Shirt.jpg",
                 "action": "generate",
-                "mockup_sets_to_use": ["whatwillwear"],
+                "mockup_sets_to_use": ["ktbtee"],
                 "coords": { "x": 264, "y": 215, "w": 479, "h": 594 }
             }
         ],
@@ -190,7 +190,7 @@
             {
                 "pattern": "-Shirt.jpg",
                 "action": "generate",
-                "mockup_sets_to_use": ["whatwillwear"],
+                "mockup_sets_to_use": ["ktbtee"],
                 "coords": { "x": 248, "y": 183, "w": 426, "h": 498 }
             }
         ],
