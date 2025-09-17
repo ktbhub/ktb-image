@@ -18,6 +18,7 @@
             "t-shirt_classic",
             "shirt_classic",
             "shirts-men-shirt",
+            "White-Ornaments",
             "sweatshirt",
             "t-shirts",
             "t-shirt",
@@ -114,6 +115,18 @@
             },
             {
                 "pattern": "-Mug-and-Ornament.jpg",
+                "action": "skip",
+                "mockup_sets_to_use": ["ktbtee"],
+                "coords": { "x": 285, "y": 734, "w": 374, "h": 512 }
+            },
+            {
+                "pattern": "-White-Ornaments.jpg",
+                "action": "generate",
+                "mockup_sets_to_use": ["ktbtee"],
+                "coords": { "x": 352, "y": 330, "w": 523, "h": 506 }
+            },
+            {
+                "pattern": "-mug.jpg",
                 "action": "skip",
                 "mockup_sets_to_use": ["ktbtee"],
                 "coords": { "x": 285, "y": 734, "w": 374, "h": 512 }
@@ -278,6 +291,12 @@
                 "mockup_sets_to_use": ["albumcoverprint"],
                 "coords": { "x": 364, "y": 233, "w": 298, "h": 387 },
                 "skipBlack": true
+            },
+            {
+                "pattern": "-T-Shirt.jpg",
+                "action": "generate",
+                "mockup_sets_to_use": ["ktbtee"],
+                "coords": { "x": 395, "y": 159, "w": 353, "h": 476 }
             }
         ],
         "fanaticity.com": [
