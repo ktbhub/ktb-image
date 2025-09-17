@@ -1,20 +1,30 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-17 11:38:06 +07
+Timestamp: 2025-09-17 12:10:06 +07
 
-Domain: berrylittles.com
-  albumcoverprint: 9
+Domain: teeextra.com
+  ktbtee: 8
   Skipped Images: 0
-  Total URLs to Process: 9
+  Total URLs to Process: 8
 
-Domain: dreameshirt.com
-  ktbtee: 5
+Domain: eteeclothing.com
+  ktbtee: 10
+  Skipped Images: 14
+  Total URLs to Process: 24
+
+Domain: serenashirt.com
+  albumcoverprint: 32
+  Skipped Images: 31
+  Total URLs to Process: 63
+
+Domain: capitoneshirt.com
+  ktbtee: 56
   Skipped Images: 0
-  Total URLs to Process: 5
+  Total URLs to Process: 56
 
-Domain: teespix.com
-  ktbtee: 103
-  Skipped Images: 2
-  Total URLs to Process: 105
+Domain: neoteeco.com
+  albumcoverprint: 13
+  Skipped Images: 0
+  Total URLs to Process: 13
 
 Domain: newshirtstore.com
   albumcoverprint: 50
