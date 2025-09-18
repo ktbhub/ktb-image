@@ -1,33 +1,9 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-18 14:38:02 +07
+Timestamp: 2025-09-18 14:55:55 +07
 
-Domain: meredpremium.com
-  ktbtee: 84
-  Skipped Images: 38
-  Total URLs to Process: 122
-
-Domain: nowbestshirt.com
-  ktbtee: 1
+Domain: techteesusa.com
+  ktbtee: 48
+  whatwillwear: 48
   Skipped Images: 0
-  Total URLs to Process: 1
-
-Domain: capitoneshirt.com
-  ktbtee: 1
-  Skipped Images: 4
-  Total URLs to Process: 5
-
-Domain: lovingsquad.com
-  ktbtee: 47
-  Skipped Images: 0
-  Total URLs to Process: 47
-
-Domain: arjomany.com
-  albumcoverprint: 19
-  Skipped Images: 0
-  Total URLs to Process: 19
-
-Domain: designatshop.com
-  ktbtee: 3
-  Skipped Images: 0
-  Total URLs to Process: 3
+  Total URLs to Process: 48
 
