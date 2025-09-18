@@ -1,9 +1,15 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-18 20:26:10 +07
+Timestamp: 2025-09-18 20:41:33 +07
 
-Domain: nowbestshirt.com
-  ktbtee: 104
-  amertee: 104
-  Skipped Images: 3
-  Total URLs to Process: 107
+Domain: teeworksusa.com
+  ktbtee: 54
+  amertee: 54
+  Skipped Images: 0
+  Total URLs to Process: 54
+
+Domain: teleteeshirt.com
+  ktbtee: 8
+  albumcoverprint: 8
+  Skipped Images: 0
+  Total URLs to Process: 8
 
