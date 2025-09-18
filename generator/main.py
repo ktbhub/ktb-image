@@ -457,12 +457,9 @@ def main():
                     final_filename = f"{prefix_to_add} {cleaned_title} {suffix_to_add}".replace('  ', ' ').strip()
                     final_filename += '.webp'
                     
-                    # --- BẮT ĐẦU TÍCH HỢP EXIF ---
-                    # Lấy prefix từ domain, ví dụ 'teepublic' từ 'teepublic.com'
-                    prefix = domain.split('.')[0]
-                    
-                    # Tạo dữ liệu EXIF
-                    exif_bytes = create_exif_data(prefix, final_filename)
+                    # --- BẮT ĐẦU TÍCH HỢP EXIF (ĐÃ SỬA LỖI) ---
+                    # Lấy prefix từ tên mockup_set, ví dụ 'ktbtee'
+                    exif_bytes = create_exif_data(mockup_name, final_filename)
                     
                     # Lưu ảnh với dữ liệu EXIF
                     img_byte_arr = BytesIO()
