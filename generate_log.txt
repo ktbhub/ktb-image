@@ -1,18 +1,8 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-18 18:42:50 +07
-
-Domain: teeextra.com
-  ktbtee: 6
-  Skipped Images: 0
-  Total URLs to Process: 6
-
-Domain: capitoneshirt.com
-  whatwillwear: 25
-  Skipped Images: 0
-  Total URLs to Process: 25
+Timestamp: 2025-09-18 19:08:50 +07
 
 Domain: clickoneshirt.com
-  ktbtee: 11
-  Skipped Images: 1
-  Total URLs to Process: 12
+  ktbtee: 100
+  Skipped Images: 0
+  Total URLs to Process: 100
 
