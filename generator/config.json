@@ -1,5 +1,6 @@
 {
     "defaults": {
+        "global_output_format": "webp",
         "exif_defaults": {
               "Make": "Canon",
               "Model": "Canon EOS R5",
