@@ -1,9 +1,9 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-18 21:36:30 +07
+Timestamp: 2025-09-18 22:43:48 +07
 
-Domain: teleteeshirt.com
-  ktbtee: 8
-  albumcoverprint: 8
+Domain: teeextra.com
+  ktbtee: 23
+  amertee: 23
   Skipped Images: 0
-  Total URLs to Process: 8
+  Total URLs to Process: 23
 
