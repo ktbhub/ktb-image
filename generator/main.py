@@ -7,7 +7,8 @@ from datetime import datetime
 import pytz
 from PIL import Image, ImageDraw, ImageFont
 from io import BytesIO
-import re
+import piexif # <--- THÊM MỚI
+
 #Đây là bản update test thử chức năng magicwand đa điểm, nếu không work có thể back lại version backup lưu ở PCHome 10:33PM 9.10.25
 # --- Cấu hình ---
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -18,6 +19,43 @@ CONFIG_FILE = os.path.join(REPO_ROOT, "generator", "config.json")
 MAX_REPO_SIZE_MB = 900
 
 # --- Các hàm hỗ trợ ---
+
+def create_exif_data(prefix, final_filename):
+    """
+    Tạo chuỗi bytes EXIF dựa trên prefix và tên file cuối cùng.
+    Sử dụng các thẻ EXIF tương đương để đáp ứng yêu cầu.
+    """
+    domain = prefix + ".com"
+    now_str = datetime.now().strftime("%Y:%m:%d %H:%M:%S")
+    software_name = b"Adobe Photoshop 25.0" # Tên phần mềm tùy chỉnh
+
+    try:
+        # Dữ liệu cho IFD (Image File Directory) chính - "0th"
+        zeroth_ifd = {
+            piexif.ImageIFD.Artist: domain.encode('utf-8'),
+            piexif.ImageIFD.Copyright: domain.encode('utf-8'),
+            piexif.ImageIFD.ImageDescription: final_filename.encode('utf-8'),
+            piexif.ImageIFD.Software: software_name,
+            # Các thẻ Windows XP yêu cầu mã hóa utf-16le
+            piexif.ImageIFD.XPAuthor: domain.encode('utf-16le'),
+            piexif.ImageIFD.XPComment: final_filename.encode('utf-16le'),
+            piexif.ImageIFD.XPSubject: final_filename.encode('utf-16le'),
+            # Từ khóa phải được ngăn cách bằng dấu ';' và kết thúc bằng null character (\x00\x00)
+            piexif.ImageIFD.XPKeywords: (prefix + ";" + "shirt;").encode('utf-16le')
+        }
+        
+        # Dữ liệu cho Exif IFD
+        exif_ifd = {
+            piexif.ExifIFD.DateTimeOriginal: now_str.encode('utf-8'),
+            piexif.ExifIFD.CreateDate: now_str.encode('utf-8'),
+        }
+
+        exif_dict = {"0th": zeroth_ifd, "Exif": exif_ifd}
+        exif_bytes = piexif.dump(exif_dict)
+        return exif_bytes
+    except Exception as e:
+        print(f"Lỗi khi tạo dữ liệu EXIF: {e}")
+        return b'' # Trả về bytes rỗng nếu có lỗi
 
 def should_globally_skip(filename, skip_keywords):
     """
@@ -334,7 +372,7 @@ def main():
 
             # >> KIỂM TRA BỎ QUA TOÀN CỤC NGAY TẠI ĐÂY <<
             if should_globally_skip(filename, global_skip_keywords):
-                print(f"Skipping (Global): '{filename}' chứa từ khóa bị cấm.")
+                # Message is already printed inside the function
                 skipped_count += 1
                 continue
 
@@ -412,9 +450,18 @@ def main():
 
                     final_filename = f"{prefix_to_add} {cleaned_title} {suffix_to_add}".replace('  ', ' ').strip()
                     final_filename += '.webp'
-
+                    
+                    # --- BẮT ĐẦU TÍCH HỢP EXIF ---
+                    # Lấy prefix từ domain, ví dụ 'teepublic' từ 'teepublic.com'
+                    prefix = domain.split('.')[0]
+                    
+                    # Tạo dữ liệu EXIF
+                    exif_bytes = create_exif_data(prefix, final_filename)
+                    
+                    # Lưu ảnh với dữ liệu EXIF
                     img_byte_arr = BytesIO()
-                    final_mockup.save(img_byte_arr, format="WEBP", quality=90)
+                    final_mockup.save(img_byte_arr, format="WEBP", quality=90, exif=exif_bytes)
+                    # --- KẾT THÚC TÍCH HỢP EXIF ---
 
                     if mockup_name not in images_for_zip:
                         images_for_zip[mockup_name] = []
