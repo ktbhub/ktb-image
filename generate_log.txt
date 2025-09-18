@@ -1,23 +1,13 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-18 10:28:38 +07
+Timestamp: 2025-09-18 10:46:22 +07
 
-Domain: teehandus.com
+Domain: melonashirt.com
   ktbtee: 3
   Skipped Images: 0
   Total URLs to Process: 3
 
-Domain: melonashirt.com
-  ktbtee: 60
-  Skipped Images: 0
-  Total URLs to Process: 60
-
 Domain: arjomany.com
-  albumcoverprint: 26
-  Skipped Images: 0
-  Total URLs to Process: 26
-
-Domain: collectionpostertour.com
-  albumcoverprint: 6
-  Skipped Images: 18
-  Total URLs to Process: 24
+  albumcoverprint: 11
+  Skipped Images: 16
+  Total URLs to Process: 27
 
