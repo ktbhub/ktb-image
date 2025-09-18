@@ -61,7 +61,7 @@
         "whatwillwear": {
             "white": "https://raw.githubusercontent.com/ktbhub/ktb-image/main/mockup/mockup_whatwillwear_white.jpg",
             "black": "https://raw.githubusercontent.com/ktbhub/ktb-image/main/mockup/mockup_whatwillwear_black.jpg",
-            "coords": { "x": 452, "y": 477, "w": 305, "h": 423 },
+            "coords": { "x": 366, "y": 303, "w": 449, "h": 606 },
             "watermark_text": "[Whatwillwear]",
             "title_prefix_to_add": "Official",
             "title_suffix_to_add": "TShirts Sweater"
