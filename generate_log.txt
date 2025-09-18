@@ -1,37 +1,13 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-18 13:08:44 +07
+Timestamp: 2025-09-18 13:30:39 +07
 
 Domain: teeworksusa.com
-  ktbtee: 66
+  ktbtee: 13
   Skipped Images: 0
-  Total URLs to Process: 66
-
-Domain: teeextra.com
-  ktbtee: 71
-  Skipped Images: 0
-  Total URLs to Process: 71
+  Total URLs to Process: 13
 
 Domain: eteeclothing.com
-  ktbtee: 77
-  Skipped Images: 35
-  Total URLs to Process: 112
-
-Domain: nowbestshirt.com
-  ktbtee: 113
-  Skipped Images: 4
-  Total URLs to Process: 117
-
-Domain: legendusashirt.com
-  albumcoverprint: 33
-  Skipped Images: 5
-  Total URLs to Process: 38
-
-Domain: capitoneshirt.com
-  Skipped Images: 37
-  Total URLs to Process: 37
-
-Domain: newshirtstore.com
-  ktbtee: 28
-  Skipped Images: 1
-  Total URLs to Process: 29
+  ktbtee: 18
+  Skipped Images: 3
+  Total URLs to Process: 21
 
