@@ -45,10 +45,11 @@ def _convert_to_gps(value, is_longitude):
         'ref': ref.encode('ascii')
     }
 
-def create_exif_data(prefix, final_filename, exif_defaults, original_url=""):
+def create_exif_data(prefix, final_filename, exif_defaults):
     """
-    Tạo chuỗi bytes EXIF với đầy đủ thông tin giả lập, GPS và ghi chú.
+    Tạo chuỗi bytes EXIF với đầy đủ thông tin giả lập, GPS.
     Thời gian được lùi lại 2 giờ so với thời gian thực.
+    Trường UserComment đã được loại bỏ.
     """
     domain = prefix + ".com"
     
@@ -56,10 +57,6 @@ def create_exif_data(prefix, final_filename, exif_defaults, original_url=""):
     time_to_write = datetime.now() - timedelta(hours=2)
     now_str = time_to_write.strftime("%Y:%m:%d %H:%M:%S")
     
-    # Chuẩn bị UserComment
-    user_comment_str = f"OriginalURL: {original_url}; ScriptVersion: 1.3;"
-    user_comment_encoded = b'UNICODE\x00' + user_comment_str.encode('utf-16le')
-
     try:
         zeroth_ifd = {
             piexif.ImageIFD.Artist: domain.encode('utf-8'),
@@ -69,7 +66,7 @@ def create_exif_data(prefix, final_filename, exif_defaults, original_url=""):
             piexif.ImageIFD.DateTime: now_str.encode('utf-8'),
             piexif.ImageIFD.Make: exif_defaults.get("Make", "").encode('utf-8'),
             piexif.ImageIFD.Model: exif_defaults.get("Model", "").encode('utf-8'),
-            piexif.ImageIFD.XPAuthor: domain.encode('utf-16le'),
+            piexif.ImageIFD.XPAuthor: domain.encode('utf-16le'), # Tương đương Creator/Author
             piexif.ImageIFD.XPComment: final_filename.encode('utf-16le'),
             piexif.ImageIFD.XPSubject: final_filename.encode('utf-16le'),
             piexif.ImageIFD.XPKeywords: (prefix + ";" + "shirt;").encode('utf-16le')
@@ -81,8 +78,7 @@ def create_exif_data(prefix, final_filename, exif_defaults, original_url=""):
             piexif.ExifIFD.FNumber: tuple(exif_defaults.get("FNumber", [0,1])),
             piexif.ExifIFD.ExposureTime: tuple(exif_defaults.get("ExposureTime", [0,1])),
             piexif.ExifIFD.ISOSpeedRatings: exif_defaults.get("ISOSpeedRatings", 0),
-            piexif.ExifIFD.FocalLength: tuple(exif_defaults.get("FocalLength", [0,1])),
-            piexif.ExifIFD.UserComment: user_comment_encoded
+            piexif.ExifIFD.FocalLength: tuple(exif_defaults.get("FocalLength", [0,1]))
         }
         
         # Xử lý GPS
@@ -404,12 +400,11 @@ def main():
                     final_filename = f"{prefix_to_add} {cleaned_title} {suffix_to_add}".replace('  ', ' ').strip()
                     final_filename += '.webp'
                     
-                    # Cập nhật lời gọi hàm để truyền thêm exif_defaults và url
+                    # Cập nhật lời gọi hàm để truyền thêm exif_defaults
                     exif_bytes = create_exif_data(
                         prefix=mockup_name, 
                         final_filename=final_filename, 
-                        exif_defaults=exif_defaults, 
-                        original_url=url
+                        exif_defaults=exif_defaults
                     )
 
                     # Lưu ảnh với dữ liệu EXIF
