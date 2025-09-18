@@ -1,34 +1,7 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-18 08:20:08 +07
+Timestamp: 2025-09-18 08:33:20 +07
 
-Domain: techteesusa.com
-  ktbtee: 2
-  whatwillwear: 2
-  Skipped Images: 3
-  Total URLs to Process: 5
-
-Domain: teeextra.com
-  ktbtee: 23
-  Skipped Images: 1
-  Total URLs to Process: 24
-
-Domain: eteeclothing.com
-  ktbtee: 79
-  Skipped Images: 0
-  Total URLs to Process: 79
-
-Domain: legendusashirt.com
-  albumcoverprint: 90
-  Skipped Images: 2
-  Total URLs to Process: 92
-
-Domain: teehandus.com
-  ktbtee: 1
-  Skipped Images: 0
-  Total URLs to Process: 1
-
-Domain: newshirtstore.com
-  albumcoverprint: 20
-  Skipped Images: 0
-  Total URLs to Process: 20
+Domain: teeslocal.com
+  Skipped Images: 88
+  Total URLs to Process: 88
 
