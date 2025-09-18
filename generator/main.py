@@ -96,7 +96,7 @@ def create_exif_data(prefix, final_filename, exif_defaults):
             piexif.ExifIFD.FocalLength: tuple(exif_defaults.get("FocalLength", [0,1]))
         }
         
-        # ... (phần còn lại của hàm giữ nguyên)
+        # Xử lý GPS
         gps_ifd = {}
         lat = exif_defaults.get("GPSLatitude")
         lon = exif_defaults.get("GPSLongitude")
@@ -286,6 +286,10 @@ def main():
     cleanup_old_zips()
     configs = load_config()
     defaults = configs.get("defaults", {})
+    
+    # Đọc định dạng file chung, mặc định là 'webp' nếu không có trong config
+    output_format = defaults.get("global_output_format", "webp").lower()
+
     exif_defaults = defaults.get("exif_defaults", {}) 
     domains_configs = configs.get("domains", {})
     mockup_sets_config = configs.get("mockup_sets", {})
@@ -405,6 +409,9 @@ def main():
                     final_mockup = process_image(cropped_img, mockup_to_use, mockup_data.get("coords"), user_config)
                     if not final_mockup:
                         continue
+                    
+                    # --- BẮT ĐẦU LOGIC LƯU FILE LINH HOẠT ---
+                    # Tạo tên file cơ bản (chưa có đuôi file)
                     base_filename = os.path.splitext(filename)[0]
                     pre_clean_pattern = matched_rule.get("pre_clean_regex")
                     if pre_clean_pattern:
@@ -412,19 +419,38 @@ def main():
                     cleaned_title = clean_title(base_filename.replace('-', ' ').strip(), title_clean_keywords)
                     prefix_to_add = mockup_data.get("title_prefix_to_add", "")
                     suffix_to_add = mockup_data.get("title_suffix_to_add", "")
-                    final_filename = f"{prefix_to_add} {cleaned_title} {suffix_to_add}".replace('  ', ' ').strip()
-                    final_filename += '.webp'
-                    
-                    # Cập nhật lời gọi hàm để truyền thêm exif_defaults
+                    final_filename_base = f"{prefix_to_add} {cleaned_title} {suffix_to_add}".replace('  ', ' ').strip()
+
+                    # Xử lý file dựa trên cấu hình global_output_format
+                    image_to_save = final_mockup
+                    save_format_pillow = ""
+                    file_extension = ""
+
+                    if output_format in ["jpeg", "jpg"]:
+                        image_to_save = final_mockup.convert('RGB')
+                        save_format_pillow = "JPEG"
+                        file_extension = ".jpg"
+                    elif output_format == "webp":
+                        image_to_save = final_mockup # Giữ nguyên RGBA
+                        save_format_pillow = "WEBP"
+                        file_extension = ".webp"
+                    else:
+                        print(f"Lỗi: Định dạng '{output_format}' không hợp lệ. Sử dụng webp mặc định.")
+                        save_format_pillow = "WEBP"
+                        file_extension = ".webp"
+
+                    final_filename = final_filename_base + file_extension
+
+                    # Tạo EXIF và lưu file
                     exif_bytes = create_exif_data(
                         prefix=mockup_name, 
                         final_filename=final_filename, 
                         exif_defaults=exif_defaults
                     )
 
-                    # Lưu ảnh với dữ liệu EXIF
                     img_byte_arr = BytesIO()
-                    final_mockup.save(img_byte_arr, format="WEBP", quality=90, exif=exif_bytes)
+                    image_to_save.save(img_byte_arr, format=save_format_pillow, quality=90, exif=exif_bytes)
+                    # --- KẾT THÚC LOGIC LƯU FILE ---
 
                     if mockup_name not in images_for_zip:
                         images_for_zip[mockup_name] = []
