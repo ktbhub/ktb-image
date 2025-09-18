@@ -1,5 +1,16 @@
 {
     "defaults": {
+        "exif_defaults": {
+              "Make": "Canon",
+              "Model": "Canon EOS R5",
+              "Software": "Adobe Photoshop 25.0",
+              "FNumber": [8, 1],
+              "ExposureTime": [1, 125],
+              "ISOSpeedRatings": 100,
+              "FocalLength": [50, 1],
+              "GPSLatitude": 33.7465515,
+              "GPSLongitude": -118.0297799
+            },
         "title_clean_keywords": [
             "Orament-Christmas-den",
             "Ornament-X-Mas-2024",
@@ -282,9 +293,9 @@
             },
             {
                 "pattern": "-T-Shirt.jpg",
-                "action": "skip",
+                "action": "generate",
                 "mockup_sets_to_use": ["ktbtee"],
-                "coords": { "x": 395, "y": 159, "w": 353, "h": 476 }
+                "coords": { "x": 388, "y": 170, "w": 370, "h": 489 }
             }
         ],
         "fanaticity.com": [
@@ -450,8 +461,7 @@
                 "pattern": "-sweater.jpg",
                 "action": "generate",
                 "mockup_sets_to_use": ["albumcoverprint"],
-                "coords": { "x": 145, "y": 159, "w": 422, "h": 579 },
-                "skipWhite": true
+                "coords": { "x": 145, "y": 159, "w": 422, "h": 579 }
             }
         ],
         "berrylittles.com": [
