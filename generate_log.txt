@@ -1,8 +1,12 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-18 19:08:50 +07
+Timestamp: 2025-09-18 19:29:34 +07
 
-Domain: clickoneshirt.com
-  ktbtee: 100
+Domain: teehandus.com
+  Skipped Images: 45
+  Total URLs to Process: 45
+
+Domain: lovingsquad.com
+  albumcoverprint: 100
   Skipped Images: 0
   Total URLs to Process: 100
 
