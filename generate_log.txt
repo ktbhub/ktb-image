@@ -1,7 +1,18 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-18 08:33:20 +07
+Timestamp: 2025-09-18 09:17:41 +07
 
-Domain: teeslocal.com
-  Skipped Images: 88
-  Total URLs to Process: 88
+Domain: geekteesus.com
+  Skipped Images: 16
+  Total URLs to Process: 16
+
+Domain: teleteeshirt.com
+  ktbtee: 8
+  albumcoverprint: 8
+  Skipped Images: 0
+  Total URLs to Process: 8
+
+Domain: collectionpostertour.com
+  ktbtee: 11
+  Skipped Images: 9
+  Total URLs to Process: 20
 
