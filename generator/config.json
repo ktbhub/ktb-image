@@ -19,10 +19,13 @@
             "shirt_classic",
             "shirts-men-shirt",
             "White-Ornaments",
+            "classic-mens",
+            "men-shirt",
             "sweatshirt",
             "t-shirts",
             "t-shirt",
             "tshirt",
+            "Ladies",
             "sweater",
             "hoodie",
             "Official",
@@ -69,23 +72,15 @@
             "coords": { "x": 362, "y": 254, "w": 424, "h": 582 },
             "watermark_text": "[KTB]",
             "title_prefix_to_add": "Official",
-            "title_suffix_to_add": "TShirt Sweatshirt"
+            "title_suffix_to_add": "Tshirt Sweatshirt"
         },
         "albumcoverprint": {
             "white": "https://raw.githubusercontent.com/ktbhub/ktb-image/main/mockup/mockup_albumcoverprint_white.jpg",
             "black": "https://raw.githubusercontent.com/ktbhub/ktb-image/main/mockup/mockup_albumcoverprint_black.jpg",
-            "coords": { "x": 455, "y": 500, "w": 328, "h": 445 },
+            "coords": { "x": 364, "y": 274, "w": 446, "h": 569 },
             "watermark_text": "[ACP]",
             "title_prefix_to_add": "Official",
             "title_suffix_to_add": "T Shirt Sweater"
-        },
-        "nextdomain": {
-            "white": "https://raw.githubusercontent.com/ktbhub/ktb-image/main/mockup/mockup_white_2.webp",
-            "black": "https://raw.githubusercontent.com/ktbhub/ktb-image/main/mockup/mockup_black_2.webp",
-            "coords": { "x": 352, "y": 308, "w": 448, "h": 623 },
-            "watermark_text": "[nextdomain]",
-            "title_prefix_to_add": "Official",
-            "title_suffix_to_add": "Shirts"
         }
     },
     "domains": {
