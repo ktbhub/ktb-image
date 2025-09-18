@@ -9,6 +9,7 @@ from PIL import Image, ImageDraw, ImageFont
 from io import BytesIO
 import piexif
 from urllib.parse import quote
+import random
 
 #Đây là bản update test thử chức năng magicwand đa điểm, nếu không work có thể back lại version backup lưu ở PCHome 10:33PM 9.10.25
 # --- Cấu hình ---
@@ -48,18 +49,24 @@ def _convert_to_gps(value, is_longitude):
 def create_exif_data(prefix, final_filename, exif_defaults):
     """
     Tạo chuỗi bytes EXIF.
-    DateTimeOriginal sẽ sớm hơn DateTimeDigitized 2 giờ.
+    DateTimeOriginal sẽ sớm hơn DateTimeDigitized một khoảng ngẫu nhiên (khoảng 2 giờ).
     """
     domain = prefix + ".com"
     
-    # --- THAY ĐỔI LOGIC THỜI GIAN TẠI ĐÂY ---
+    # --- THAY ĐỔI LOGIC THỜI GIAN NGẪU NHIÊN TẠI ĐÂY ---
     # 1. Lấy thời gian "số hóa" (là thời điểm script chạy, đã lùi 2 giờ)
     digitized_time = datetime.now() - timedelta(hours=2)
     
-    # 2. Lấy thời gian "gốc" (sớm hơn thời gian số hóa 2 giờ)
-    original_time = digitized_time - timedelta(hours=2)
+    # 2. Tạo một khoảng thời gian ngẫu nhiên bằng giây (ví dụ: từ 1h55m đến 2h05m)
+    # 1h55m = 6900 giây; 2h05m = 7500 giây
+    min_seconds_offset = 3600
+    max_seconds_offset = 7500
+    random_seconds = random.randint(min_seconds_offset, max_seconds_offset)
     
-    # 3. Chuyển đổi cả hai thành chuỗi
+    # 3. Lấy thời gian "gốc" bằng cách trừ đi khoảng thời gian ngẫu nhiên
+    original_time = digitized_time - timedelta(seconds=random_seconds)
+    
+    # 4. Chuyển đổi cả hai thành chuỗi
     digitized_str = digitized_time.strftime("%Y:%m:%d %H:%M:%S")
     original_str = original_time.strftime("%Y:%m:%d %H:%M:%S")
     
