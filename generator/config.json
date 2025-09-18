@@ -93,6 +93,14 @@
             "watermark_text": "[ACP]",
             "title_prefix_to_add": "Official",
             "title_suffix_to_add": "T Shirt Sweater"
+        },
+        "amertee": {
+            "white": "https://raw.githubusercontent.com/ktbhub/ktb-image/main/mockup/mockup_amertee_white.jpg",
+            "black": "https://raw.githubusercontent.com/ktbhub/ktb-image/main/mockup/mockup_amertee_black.jpg",
+            "coords": { "x": 366, "y": 271, "w": 443, "h": 542 },
+            "watermark_text": "[AMT]",
+            "title_prefix_to_add": "Official",
+            "title_suffix_to_add": "T Shirt Sweater"
         }
     },
     "domains": {
@@ -197,13 +205,13 @@
             {
                 "pattern": "-Ornament.jpg",
                 "action": "generate",
-                "mockup_sets_to_use": ["ktbtee"],
+                "mockup_sets_to_use": ["ktbtee", "amertee"],
                 "coords": { "x": 207, "y": 210, "w": 358, "h": 338 }
             },
             {
                 "pattern": "-Shirt.jpg",
                 "action": "generate",
-                "mockup_sets_to_use": ["ktbtee"],
+                "mockup_sets_to_use": ["ktbtee", "amertee"],
                 "coords": { "x": 264, "y": 215, "w": 479, "h": 594 }
             }
         ],
