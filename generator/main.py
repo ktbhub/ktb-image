@@ -47,41 +47,49 @@ def _convert_to_gps(value, is_longitude):
 
 def create_exif_data(prefix, final_filename, exif_defaults):
     """
-    Tạo chuỗi bytes EXIF với đầy đủ thông tin giả lập, GPS.
-    Thời gian được lùi lại 2 giờ so với thời gian thực.
-    Trường UserComment đã được loại bỏ.
+    Tạo chuỗi bytes EXIF.
+    DateTimeOriginal sẽ sớm hơn DateTimeDigitized 2 giờ.
     """
     domain = prefix + ".com"
     
-    # Lấy thời gian hiện tại (UTC trên server) và trừ đi 2 giờ
-    time_to_write = datetime.now() - timedelta(hours=2)
-    now_str = time_to_write.strftime("%Y:%m:%d %H:%M:%S")
+    # --- THAY ĐỔI LOGIC THỜI GIAN TẠI ĐÂY ---
+    # 1. Lấy thời gian "số hóa" (là thời điểm script chạy, đã lùi 2 giờ)
+    digitized_time = datetime.now() - timedelta(hours=2)
+    
+    # 2. Lấy thời gian "gốc" (sớm hơn thời gian số hóa 2 giờ)
+    original_time = digitized_time - timedelta(hours=2)
+    
+    # 3. Chuyển đổi cả hai thành chuỗi
+    digitized_str = digitized_time.strftime("%Y:%m:%d %H:%M:%S")
+    original_str = original_time.strftime("%Y:%m:%d %H:%M:%S")
     
     try:
+        # Dùng digitized_str cho các thẻ liên quan đến file (tạo, sửa đổi)
         zeroth_ifd = {
             piexif.ImageIFD.Artist: domain.encode('utf-8'),
             piexif.ImageIFD.Copyright: domain.encode('utf-8'),
             piexif.ImageIFD.ImageDescription: final_filename.encode('utf-8'),
             piexif.ImageIFD.Software: exif_defaults.get("Software", "Adobe Photoshop 25.0").encode('utf-8'),
-            piexif.ImageIFD.DateTime: now_str.encode('utf-8'),
+            piexif.ImageIFD.DateTime: digitized_str.encode('utf-8'), # Thời gian sửa file
             piexif.ImageIFD.Make: exif_defaults.get("Make", "").encode('utf-8'),
             piexif.ImageIFD.Model: exif_defaults.get("Model", "").encode('utf-8'),
-            piexif.ImageIFD.XPAuthor: domain.encode('utf-16le'), # Tương đương Creator/Author
+            piexif.ImageIFD.XPAuthor: domain.encode('utf-16le'),
             piexif.ImageIFD.XPComment: final_filename.encode('utf-16le'),
             piexif.ImageIFD.XPSubject: final_filename.encode('utf-16le'),
             piexif.ImageIFD.XPKeywords: (prefix + ";" + "shirt;").encode('utf-16le')
         }
         
+        # Gán 2 chuỗi thời gian khác nhau vào 2 thẻ tương ứng
         exif_ifd = {
-            piexif.ExifIFD.DateTimeOriginal: now_str.encode('utf-8'),
-            piexif.ExifIFD.DateTimeDigitized: now_str.encode('utf-8'),
+            piexif.ExifIFD.DateTimeOriginal: original_str.encode('utf-8'),
+            piexif.ExifIFD.DateTimeDigitized: digitized_str.encode('utf-8'),
             piexif.ExifIFD.FNumber: tuple(exif_defaults.get("FNumber", [0,1])),
             piexif.ExifIFD.ExposureTime: tuple(exif_defaults.get("ExposureTime", [0,1])),
             piexif.ExifIFD.ISOSpeedRatings: exif_defaults.get("ISOSpeedRatings", 0),
             piexif.ExifIFD.FocalLength: tuple(exif_defaults.get("FocalLength", [0,1]))
         }
         
-        # Xử lý GPS
+        # ... (phần còn lại của hàm giữ nguyên)
         gps_ifd = {}
         lat = exif_defaults.get("GPSLatitude")
         lon = exif_defaults.get("GPSLongitude")
