@@ -377,13 +377,13 @@
             {
                 "pattern": "-T-shirt.jpg",
                 "action": "generate",
-                "mockup_sets_to_use": ["ktbtee"],
-                "coords": { "x": 311, "y": 153, "w": 398, "h": 451 }
+                "mockup_sets_to_use": ["albumcoverprint"],
+                "coords": { "x": 307, "y": 153, "w": 400, "h": 568 }
             },
             {
                 "pattern": "-Ladies.jpg",
                 "action": "generate",
-                "mockup_sets_to_use": ["ktbtee"],
+                "mockup_sets_to_use": ["albumcoverprint"],
                 "coords": { "x": 321, "y": 158, "w": 346, "h": 504 }
             }
         ],
