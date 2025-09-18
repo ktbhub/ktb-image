@@ -99,8 +99,8 @@
             "black": "https://raw.githubusercontent.com/ktbhub/ktb-image/main/mockup/mockup_amertee_black.jpg",
             "coords": { "x": 366, "y": 271, "w": 443, "h": 542 },
             "watermark_text": "[AMT]",
-            "title_prefix_to_add": "Official",
-            "title_suffix_to_add": "T Shirt Sweater"
+            "title_prefix_to_add": "",
+            "title_suffix_to_add": "Premium Shirt Sweater"
         }
     },
     "domains": {
@@ -126,25 +126,25 @@
             {
                 "pattern": "-poster.jpg",
                 "action": "generate",
-                "mockup_sets_to_use": ["ktbtee"],
+                "mockup_sets_to_use": ["ktbtee", "amertee"],
                 "coords": { "x": 399, "y": 180, "w": 980, "h": 1405 }
             },
             {
                 "pattern": "-Mug-and-Ornament.jpg",
                 "action": "skip",
-                "mockup_sets_to_use": ["ktbtee"],
+                "mockup_sets_to_use": ["ktbtee", "amertee"],
                 "coords": { "x": 285, "y": 734, "w": 374, "h": 512 }
             },
             {
                 "pattern": "-White-Ornaments.jpg",
                 "action": "generate",
-                "mockup_sets_to_use": ["ktbtee"],
+                "mockup_sets_to_use": ["ktbtee", "amertee"],
                 "coords": { "x": 352, "y": 330, "w": 523, "h": 506 }
             },
             {
                 "pattern": "-mug.jpg",
                 "action": "skip",
-                "mockup_sets_to_use": ["ktbtee"],
+                "mockup_sets_to_use": ["ktbtee", "amertee"],
                 "coords": { "x": 285, "y": 734, "w": 374, "h": 512 }
             }
         ],
