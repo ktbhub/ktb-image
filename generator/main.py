@@ -8,6 +8,7 @@ import pytz
 from PIL import Image, ImageDraw, ImageFont
 from io import BytesIO
 import piexif # <--- THÊM MỚI
+from urllib.parse import quote # <--- THÊM DÒNG NÀY
 
 #Đây là bản update test thử chức năng magicwand đa điểm, nếu không work có thể back lại version backup lưu ở PCHome 10:33PM 9.10.25
 # --- Cấu hình ---
@@ -36,18 +37,19 @@ def create_exif_data(prefix, final_filename):
             piexif.ImageIFD.Copyright: domain.encode('utf-8'),
             piexif.ImageIFD.ImageDescription: final_filename.encode('utf-8'),
             piexif.ImageIFD.Software: software_name,
+            piexif.ImageIFD.DateTime: now_str.encode('utf-8'), # Thêm ModifyDate
             # Các thẻ Windows XP yêu cầu mã hóa utf-16le
             piexif.ImageIFD.XPAuthor: domain.encode('utf-16le'),
             piexif.ImageIFD.XPComment: final_filename.encode('utf-16le'),
             piexif.ImageIFD.XPSubject: final_filename.encode('utf-16le'),
-            # Từ khóa phải được ngăn cách bằng dấu ';' và kết thúc bằng null character (\x00\x00)
             piexif.ImageIFD.XPKeywords: (prefix + ";" + "shirt;").encode('utf-16le')
         }
         
         # Dữ liệu cho Exif IFD
         exif_ifd = {
             piexif.ExifIFD.DateTimeOriginal: now_str.encode('utf-8'),
-            piexif.ExifIFD.CreateDate: now_str.encode('utf-8'),
+            # SỬA LỖI: Dùng DateTimeDigitized thay cho CreateDate
+            piexif.ExifIFD.DateTimeDigitized: now_str.encode('utf-8'),
         }
 
         exif_dict = {"0th": zeroth_ifd, "Exif": exif_ifd}
@@ -104,11 +106,15 @@ def load_config():
 
 def download_image(url):
     """Tải ảnh từ URL và trả về đối tượng PIL Image."""
+    # SỬA LỖI: Mã hóa URL trước khi đưa vào header
+    safe_url_for_header = quote(url, safe='/:?=&')
+    
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
-        'Referer': url
+        'Referer': safe_url_for_header
     }
     try:
+        # Vẫn dùng url gốc cho request chính
         response = requests.get(url, headers=headers, timeout=30)
         response.raise_for_status()
         return Image.open(BytesIO(response.content)).convert("RGBA")
