@@ -1,13 +1,23 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-18 10:46:22 +07
+Timestamp: 2025-09-18 11:11:18 +07
 
-Domain: melonashirt.com
-  ktbtee: 3
+Domain: berrylittles.com
+  albumcoverprint: 4
   Skipped Images: 0
-  Total URLs to Process: 3
+  Total URLs to Process: 4
 
-Domain: arjomany.com
-  albumcoverprint: 11
-  Skipped Images: 16
-  Total URLs to Process: 27
+Domain: dreameshirt.com
+  ktbtee: 33
+  Skipped Images: 0
+  Total URLs to Process: 33
+
+Domain: collectionpostertour.com
+  albumcoverprint: 9
+  Skipped Images: 19
+  Total URLs to Process: 28
+
+Domain: newshirtstore.com
+  ktbtee: 38
+  Skipped Images: 0
+  Total URLs to Process: 38
 
