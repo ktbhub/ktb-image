@@ -1,8 +1,23 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-19 20:3402 +07
+Timestamp: 2025-09-19 21:0341 +07
 
 Domain: techteesusa.com
   amertee: 4
   Skipped Images: 0
   Total URLs to Process: 4
+
+Domain: teeworksusa.com
+  ktbtee: 40
+  Skipped Images: 0
+  Total URLs to Process: 40
+
+Domain: dalatshirt.com
+  albumcoverprint: 69
+  Skipped Images: 0
+  Total URLs to Process: 69
+
+Domain: mercuryshirt.com
+  albumcoverprint: 38
+  Skipped Images: 8
+  Total URLs to Process: 46
 
