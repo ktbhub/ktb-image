@@ -400,7 +400,7 @@
             {
                 "pattern": "-poster.jpg",
                 "action": "generate",
-                "mockup_sets_to_use": ["albumcoverprint"],
+                "mockup_sets_to_use": ["albumcoverprint", "whatwillwear"],
                 "coords": { "x": 178, "y": 69, "w": 454, "h": 674 }
             },
             {
