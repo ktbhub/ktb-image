@@ -1,9 +1,24 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-19 08:44:46 +07
+Timestamp: 2025-09-19 09:12:18 +07
+
+Domain: geekteesus.com
+  Skipped Images: 29
+  Total URLs to Process: 29
 
 Domain: teeworksusa.com
-  ktbtee: 2
-  amertee: 2
+  ktbtee: 57
+  amertee: 57
   Skipped Images: 0
-  Total URLs to Process: 2
+  Total URLs to Process: 57
+
+Domain: teleteeshirt.com
+  ktbtee: 26
+  albumcoverprint: 26
+  Skipped Images: 0
+  Total URLs to Process: 26
+
+Domain: collectionpostertour.com
+  albumcoverprint: 2
+  Skipped Images: 28
+  Total URLs to Process: 30
 
