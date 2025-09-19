@@ -51,14 +51,13 @@ def create_exif_data(prefix, final_filename, exif_defaults):
     Tạo chuỗi bytes EXIF.
     DateTimeOriginal sẽ sớm hơn DateTimeDigitized một khoảng ngẫu nhiên (khoảng 2 giờ).
     """
-    domain = prefix + ".com"
+    domain_exif = prefix + ".com"
     
-    # --- THAY ĐỔI LOGIC THỜI GIAN NGẪU NHIÊN TẠI ĐÂY ---
     # 1. Lấy thời gian "số hóa" (là thời điểm script chạy, đã lùi 2 giờ)
     digitized_time = datetime.now() - timedelta(hours=2)
     
     # 2. Tạo một khoảng thời gian ngẫu nhiên bằng giây (ví dụ: từ 1h55m đến 2h05m)
-    # 1h55m = 6900 giây; 2h05m = 7500 giây
+    # Giữ nguyên thay đổi của bạn
     min_seconds_offset = 3600
     max_seconds_offset = 7500
     random_seconds = random.randint(min_seconds_offset, max_seconds_offset)
@@ -73,14 +72,14 @@ def create_exif_data(prefix, final_filename, exif_defaults):
     try:
         # Dùng digitized_str cho các thẻ liên quan đến file (tạo, sửa đổi)
         zeroth_ifd = {
-            piexif.ImageIFD.Artist: domain.encode('utf-8'),
-            piexif.ImageIFD.Copyright: domain.encode('utf-8'),
+            piexif.ImageIFD.Artist: domain_exif.encode('utf-8'),
+            piexif.ImageIFD.Copyright: domain_exif.encode('utf-8'),
             piexif.ImageIFD.ImageDescription: final_filename.encode('utf-8'),
             piexif.ImageIFD.Software: exif_defaults.get("Software", "Adobe Photoshop 25.0").encode('utf-8'),
             piexif.ImageIFD.DateTime: digitized_str.encode('utf-8'), # Thời gian sửa file
             piexif.ImageIFD.Make: exif_defaults.get("Make", "").encode('utf-8'),
             piexif.ImageIFD.Model: exif_defaults.get("Model", "").encode('utf-8'),
-            piexif.ImageIFD.XPAuthor: domain.encode('utf-16le'),
+            piexif.ImageIFD.XPAuthor: domain_exif.encode('utf-16le'),
             piexif.ImageIFD.XPComment: final_filename.encode('utf-16le'),
             piexif.ImageIFD.XPSubject: final_filename.encode('utf-16le'),
             piexif.ImageIFD.XPKeywords: (prefix + ";" + "shirt;").encode('utf-16le')
@@ -287,7 +286,6 @@ def main():
     configs = load_config()
     defaults = configs.get("defaults", {})
     
-    # Đọc định dạng file chung, mặc định là 'webp' nếu không có trong config
     output_format = defaults.get("global_output_format", "webp").lower()
 
     exif_defaults = defaults.get("exif_defaults", {}) 
@@ -410,8 +408,6 @@ def main():
                     if not final_mockup:
                         continue
                     
-                    # --- BẮT ĐẦU LOGIC LƯU FILE LINH HOẠT ---
-                    # Tạo tên file cơ bản (chưa có đuôi file)
                     base_filename = os.path.splitext(filename)[0]
                     pre_clean_pattern = matched_rule.get("pre_clean_regex")
                     if pre_clean_pattern:
@@ -421,40 +417,39 @@ def main():
                     suffix_to_add = mockup_data.get("title_suffix_to_add", "")
                     final_filename_base = f"{prefix_to_add} {cleaned_title} {suffix_to_add}".replace('  ', ' ').strip()
 
-                    # Xử lý file dựa trên cấu hình global_output_format
                     image_to_save = final_mockup
                     save_format_pillow = ""
                     file_extension = ""
-
                     if output_format in ["jpeg", "jpg"]:
                         image_to_save = final_mockup.convert('RGB')
                         save_format_pillow = "JPEG"
                         file_extension = ".jpg"
                     elif output_format == "webp":
-                        image_to_save = final_mockup # Giữ nguyên RGBA
+                        image_to_save = final_mockup
                         save_format_pillow = "WEBP"
                         file_extension = ".webp"
                     else:
                         print(f"Lỗi: Định dạng '{output_format}' không hợp lệ. Sử dụng webp mặc định.")
                         save_format_pillow = "WEBP"
                         file_extension = ".webp"
-
                     final_filename = final_filename_base + file_extension
 
-                    # Tạo EXIF và lưu file
                     exif_bytes = create_exif_data(
                         prefix=mockup_name, 
                         final_filename=final_filename, 
                         exif_defaults=exif_defaults
                     )
-
                     img_byte_arr = BytesIO()
                     image_to_save.save(img_byte_arr, format=save_format_pillow, quality=90, exif=exif_bytes)
-                    # --- KẾT THÚC LOGIC LƯU FILE ---
 
+                    # --- THAY ĐỔI 1: Cấu trúc gom file ZIP ---
+                    # Cấp 1: mockup_name, Cấp 2: domain
                     if mockup_name not in images_for_zip:
-                        images_for_zip[mockup_name] = []
-                    images_for_zip[mockup_name].append((final_filename, img_byte_arr.getvalue()))
+                        images_for_zip[mockup_name] = {}
+                    if domain not in images_for_zip[mockup_name]:
+                        images_for_zip[mockup_name][domain] = []
+                    images_for_zip[mockup_name][domain].append((final_filename, img_byte_arr.getvalue()))
+                    
                     processed_by_mockup[mockup_name] = processed_by_mockup.get(mockup_name, 0) + 1
             except Exception as e:
                 print(f"Lỗi khi xử lý ảnh {url}: {e}")
@@ -464,18 +459,30 @@ def main():
             'skipped': skipped_count,
             'total_to_process': new_count
         }
-    for mockup_name, image_list in images_for_zip.items():
-        if not image_list:
-            continue
-        total_images_in_zip = len(image_list)
-        vietnam_tz = pytz.timezone('Asia/Ho_Chi_Minh')
-        now_vietnam = datetime.now(vietnam_tz)
-        zip_filename = f"{mockup_name}.{now_vietnam.strftime('%Y%m%d_%H%M%S')}_{total_images_in_zip}_images.zip"
-        zip_path = os.path.join(output_path, zip_filename)
-        print(f"Đang tạo file: {zip_path} với {total_images_in_zip} ảnh.")
-        with zipfile.ZipFile(zip_path, 'w') as zf:
-            for filename, data in image_list:
-                zf.writestr(filename, data)
+        
+    # --- THAY ĐỔI 2: Vòng lặp tạo ZIP và tên file ZIP ---
+    for mockup_name, domains_dict in images_for_zip.items():
+        for domain_name, image_list in domains_dict.items():
+            if not image_list:
+                continue
+            
+            # Đếm số lượng ảnh trong list hiện tại
+            total_images_in_zip = len(image_list)
+            
+            vietnam_tz = pytz.timezone('Asia/Ho_Chi_Minh')
+            now_vietnam = datetime.now(vietnam_tz)
+            
+            # Tạo tên file zip mới: mockupname.domain.timestamp.totalimages.zip
+            domain_prefix = domain_name.split('.')[0]
+            zip_filename = f"{mockup_name}.{domain_prefix}.{now_vietnam.strftime('%Y%m%d_%H%M%S')}.{total_images_in_zip}.zip"
+            
+            zip_path = os.path.join(output_path, zip_filename)
+            print(f"Đang tạo file: {zip_path} với {total_images_in_zip} ảnh.")
+            
+            with zipfile.ZipFile(zip_path, 'w') as zf:
+                for filename, data in image_list:
+                    zf.writestr(filename, data)
+
     write_log(urls_summary)
     print("Kết thúc quy trình.")
 
@@ -486,7 +493,7 @@ def write_log(urls_summary):
     log_file_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "generate_log.txt")
     with open(log_file_path, "w", encoding="utf-8") as f:
         f.write(f"--- Summary of Last Generation ---\n")
-        f.write(f"Timestamp: {now_vietnam.strftime('%Y-%m-%d %H:%M:%S')} +07\n\n")
+        f.write(f"Timestamp: {now_vietnam.strftime('%Y-%m-%d %H:%M%S')} +07\n\n")
         if not urls_summary:
             f.write("No new images were processed in this run.\n")
         else:
