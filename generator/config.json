@@ -378,7 +378,7 @@
             {
                 "pattern": "-Shirt.jpg",
                 "action": "generate",
-                "mockup_sets_to_use": ["ktbtee"],
+                "mockup_sets_to_use": ["whatwillwear"],
                 "coords": { "x": 405, "y": 150, "w": 311, "h": 401 }
             }
         ],
