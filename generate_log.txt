@@ -1,19 +1,23 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-19 11:06:53 +07
+Timestamp: 2025-09-19 11:31:32 +07
 
 Domain: techteesusa.com
-  ktbtee: 26
-  amertee: 26
+  ktbtee: 13
+  amertee: 13
   Skipped Images: 0
-  Total URLs to Process: 26
+  Total URLs to Process: 13
 
-Domain: berrylittles.com
-  albumcoverprint: 8
+Domain: teespix.com
+  ktbtee: 66
   Skipped Images: 0
-  Total URLs to Process: 8
+  Total URLs to Process: 66
 
-Domain: dreameshirt.com
-  ktbtee: 33
+Domain: clickoneshirt.com
+  Skipped Images: 3
+  Total URLs to Process: 3
+
+Domain: arjomany.com
+  albumcoverprint: 22
   Skipped Images: 0
-  Total URLs to Process: 33
+  Total URLs to Process: 22
 
