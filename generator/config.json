@@ -89,9 +89,9 @@
         "albumcoverprint": {
             "white": "https://raw.githubusercontent.com/ktbhub/ktb-image/main/mockup/mockup_albumcoverprint_white.jpg",
             "black": "https://raw.githubusercontent.com/ktbhub/ktb-image/main/mockup/mockup_albumcoverprint_black.jpg",
-            "coords": { "x": 364, "y": 274, "w": 446, "h": 569 },
+            "coords": { "x": 358, "y": 278, "w": 466, "h": 595 },
             "watermark_text": "[ACP]",
-            "title_prefix_to_add": "Official",
+            "title_prefix_to_add": "Original",
             "title_suffix_to_add": "T Shirt Sweater"
         },
         "amertee": {
