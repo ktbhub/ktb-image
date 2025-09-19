@@ -1,8 +1,13 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-19 21:4209 +07
+Timestamp: 2025-09-20 00:1151 +07
 
 Domain: techteesusa.com
-  amertee: 12
+  amertee: 1
   Skipped Images: 0
-  Total URLs to Process: 12
+  Total URLs to Process: 1
+
+Domain: teleteeshirt.com
+  albumcoverprint: 8
+  Skipped Images: 0
+  Total URLs to Process: 8
 
