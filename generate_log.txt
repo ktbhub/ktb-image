@@ -1,24 +1,21 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-19 14:17:13 +07
-
-Domain: techteesusa.com
-  ktbtee: 2
-  amertee: 2
-  Skipped Images: 0
-  Total URLs to Process: 2
+Timestamp: 2025-09-19 14:44:58 +07
 
 Domain: meredpremium.com
-  Skipped Images: 28
-  Total URLs to Process: 28
+  ktbtee: 52
+  whatwillwear: 52
+  Skipped Images: 5
+  Total URLs to Process: 57
 
-Domain: collectionpostertour.com
-  albumcoverprint: 3
-  Skipped Images: 11
-  Total URLs to Process: 14
+Domain: arjomany.com
+  albumcoverprint: 27
+  whatwillwear: 27
+  Skipped Images: 0
+  Total URLs to Process: 27
 
 Domain: newshirtstore.com
-  ktbtee: 1
-  whatwillwear: 1
+  ktbtee: 49
+  whatwillwear: 49
   Skipped Images: 0
-  Total URLs to Process: 1
+  Total URLs to Process: 49
 
