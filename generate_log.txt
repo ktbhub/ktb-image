@@ -1,8 +1,12 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-19 09:31:47 +07
+Timestamp: 2025-09-19 09:53:08 +07
+
+Domain: teehandus.com
+  Skipped Images: 9
+  Total URLs to Process: 9
 
 Domain: arjomany.com
-  albumcoverprint: 23
-  Skipped Images: 0
-  Total URLs to Process: 23
+  albumcoverprint: 26
+  Skipped Images: 10
+  Total URLs to Process: 37
 
