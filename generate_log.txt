@@ -1,18 +1,19 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-19 10:20:07 +07
+Timestamp: 2025-09-19 10:42:02 +07
 
-Domain: milkywayshirt.com
-  albumcoverprint: 34
+Domain: techteesusa.com
+  ktbtee: 33
+  amertee: 33
   Skipped Images: 0
-  Total URLs to Process: 34
+  Total URLs to Process: 33
 
 Domain: melonashirt.com
-  ktbtee: 63
+  ktbtee: 31
   Skipped Images: 1
-  Total URLs to Process: 64
+  Total URLs to Process: 32
 
 Domain: collectionpostertour.com
-  albumcoverprint: 12
-  Skipped Images: 7
-  Total URLs to Process: 19
+  albumcoverprint: 16
+  Skipped Images: 6
+  Total URLs to Process: 22
 
