@@ -471,6 +471,12 @@
                 "action": "generate",
                 "mockup_sets_to_use": ["albumcoverprint", "whatwillwear"],
                 "coords": { "x": 145, "y": 159, "w": 422, "h": 579 }
+            },
+            {
+                "pattern": "-shirt.jpg",
+                "action": "skip",
+                "mockup_sets_to_use": ["albumcoverprint", "whatwillwear"],
+                "coords": { "x": 187, "y": 125, "w": 451, "h": 583 }
             }
         ],
         "berrylittles.com": [
