@@ -1,21 +1,20 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-19 14:44:58 +07
+Timestamp: 2025-09-19 16:05:34 +07
 
-Domain: meredpremium.com
-  ktbtee: 52
-  whatwillwear: 52
-  Skipped Images: 5
-  Total URLs to Process: 57
-
-Domain: arjomany.com
-  albumcoverprint: 27
-  whatwillwear: 27
+Domain: dreameshirt.com
+  ktbtee: 18
+  whatwillwear: 18
   Skipped Images: 0
-  Total URLs to Process: 27
+  Total URLs to Process: 18
+
+Domain: collectionpostertour.com
+  albumcoverprint: 9
+  Skipped Images: 25
+  Total URLs to Process: 34
 
 Domain: newshirtstore.com
-  ktbtee: 49
-  whatwillwear: 49
-  Skipped Images: 0
-  Total URLs to Process: 49
+  ktbtee: 90
+  whatwillwear: 90
+  Skipped Images: 1
+  Total URLs to Process: 91
 
