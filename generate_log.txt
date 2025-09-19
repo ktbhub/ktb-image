@@ -1,13 +1,8 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-19 21:2047 +07
+Timestamp: 2025-09-19 21:4209 +07
 
 Domain: techteesusa.com
-  amertee: 18
+  amertee: 12
   Skipped Images: 0
-  Total URLs to Process: 18
-
-Domain: mercuryshirt.com
-  albumcoverprint: 14
-  Skipped Images: 0
-  Total URLs to Process: 14
+  Total URLs to Process: 12
 
