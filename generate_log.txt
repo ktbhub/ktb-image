@@ -1,20 +1,59 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-19 16:05:34 +07
+Timestamp: 2025-09-19 18:01:18 +07
 
-Domain: dreameshirt.com
-  ktbtee: 18
-  whatwillwear: 18
+Domain: geekteesus.com
+  Skipped Images: 148
+  Total URLs to Process: 148
+
+Domain: teeworksusa.com
+  ktbtee: 77
+  amertee: 77
+  Skipped Images: 1
+  Total URLs to Process: 78
+
+Domain: eteeclothing.com
+  ktbtee: 71
+  amertee: 71
+  Skipped Images: 1
+  Total URLs to Process: 72
+
+Domain: serenashirt.com
+  albumcoverprint: 26
+  whatwillwear: 26
   Skipped Images: 0
-  Total URLs to Process: 18
+  Total URLs to Process: 26
 
-Domain: collectionpostertour.com
-  albumcoverprint: 9
-  Skipped Images: 25
-  Total URLs to Process: 34
+Domain: capitoneshirt.com
+  ktbtee: 96
+  amertee: 96
+  Skipped Images: 4
+  Total URLs to Process: 100
+
+Domain: teleteeshirt.com
+  ktbtee: 6
+  albumcoverprint: 6
+  Skipped Images: 0
+  Total URLs to Process: 6
+
+Domain: teeslocal.com
+  Skipped Images: 112
+  Total URLs to Process: 112
+
+Domain: dalatshirt.com
+  Skipped Images: 100
+  Total URLs to Process: 100
+
+Domain: lovingsquad.com
+  Skipped Images: 100
+  Total URLs to Process: 100
+
+Domain: designatshop.com
+  Skipped Images: 100
+  Total URLs to Process: 100
 
 Domain: newshirtstore.com
-  ktbtee: 90
-  whatwillwear: 90
-  Skipped Images: 1
-  Total URLs to Process: 91
+  ktbtee: 60
+  whatwillwear: 60
+  Skipped Images: 0
+  Total URLs to Process: 60
 
