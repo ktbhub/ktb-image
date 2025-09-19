@@ -1,23 +1,20 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-19 08:02:05 +07
+Timestamp: 2025-09-19 08:29:25 +07
 
-Domain: teeextra.com
-  Skipped Images: 8
-  Total URLs to Process: 8
-
-Domain: teehandus.com
-  ktbtee: 9
+Domain: eteeclothing.com
+  ktbtee: 76
+  amertee: 76
   Skipped Images: 0
+  Total URLs to Process: 76
+
+Domain: nowbestshirt.com
+  ktbtee: 7
+  amertee: 7
+  Skipped Images: 2
   Total URLs to Process: 9
 
-Domain: teleteeshirt.com
-  ktbtee: 2
-  albumcoverprint: 2
-  Skipped Images: 0
-  Total URLs to Process: 2
-
-Domain: dalatshirt.com
-  ktbtee: 100
-  Skipped Images: 0
-  Total URLs to Process: 100
+Domain: legendusashirt.com
+  albumcoverprint: 60
+  Skipped Images: 19
+  Total URLs to Process: 79
 
