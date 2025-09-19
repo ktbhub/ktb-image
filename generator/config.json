@@ -295,12 +295,6 @@
                 "coords": { "x": 218, "y": 136, "w": 313, "h": 438 }
             }
         ],
-        "teehandus.com": [
-            {
-                "pattern": "",
-                "action": "skip",
-            }
-        ],
         "legendusashirt.com": [
             {
                 "pattern": "-Sweater.webp",
