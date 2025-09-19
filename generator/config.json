@@ -178,31 +178,31 @@
         "geekteesus.com": [
             {
                 "pattern": "-Ornament-poster-black.jpg",
-                "action": "generate",
+                "action": "skip",
                 "mockup_sets_to_use": ["ktbtee"],
                 "coords": { "x": 172, "y": 118, "w": 502, "h": 748 }
             },
             {
                 "pattern": "-Ornament-X-Mas-2024.jpg",
-                "action": "generate",
+                "action": "skip",
                 "mockup_sets_to_use": ["ktbtee"],
                 "coords": { "x": 255, "y": 232, "w": 470, "h": 525 }
             },
             {
                 "pattern": "-Orament-Christmas-den.jpg",
-                "action": "generate",
+                "action": "skip",
                 "mockup_sets_to_use": ["ktbtee"],
                 "coords": { "x": 255, "y": 232, "w": 470, "h": 525 }
             },
             {
                 "pattern": "-Orament-X-mas.jpg",
-                "action": "generate",
+                "action": "skip",
                 "mockup_sets_to_use": ["ktbtee"],
                 "coords": { "x": 361, "y": 261, "w": 404, "h": 428 }
             },
             {
                 "pattern": "-v-neck-t-shirt.jpg",
-                "action": "generate",
+                "action": "skip",
                 "mockup_sets_to_use": ["ktbtee"],
                 "coords": { "x": 296, "y": 223, "w": 348, "h": 436 }
             }
@@ -303,7 +303,7 @@
         "teeslocal.com": [
             {
                 "pattern": "-T-Shirt.jpg",
-                "action": "generate",
+                "action": "skip",
                 "mockup_sets_to_use": ["albumcoverprint", "whatwillwear"],
                 "coords": { "x": 388, "y": 170, "w": 370, "h": 489 }
             }
@@ -363,7 +363,7 @@
         "dalatshirt.com": [
             {
                 "pattern": "-Shirt.jpg",
-                "action": "generate",
+                "action": "skip",
                 "mockup_sets_to_use": ["albumcoverprint", "whatwillwear"],
                 "coords": { "x": 405, "y": 150, "w": 311, "h": 401 }
             }
@@ -371,13 +371,13 @@
         "lovingsquad.com": [
             {
                 "pattern": "-T-shirt.jpg",
-                "action": "generate",
+                "action": "skip",
                 "mockup_sets_to_use": ["albumcoverprint", "whatwillwear"],
                 "coords": { "x": 307, "y": 153, "w": 400, "h": 568 }
             },
             {
                 "pattern": "-Ladies.jpg",
-                "action": "generate",
+                "action": "skip",
                 "mockup_sets_to_use": ["albumcoverprint", "whatwillwear"],
                 "coords": { "x": 321, "y": 158, "w": 346, "h": 504 }
             }
@@ -399,7 +399,7 @@
         "designatshop.com": [
             {
                 "pattern": "-t-shirt.jpg",
-                "action": "generate",
+                "action": "skip",
                 "mockup_sets_to_use": ["ktbtee", "whatwillwear"],
                 "coords": { "x": 121, "y": 232, "w": 435, "h": 479 }
             }
