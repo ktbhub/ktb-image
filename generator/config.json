@@ -191,6 +191,18 @@
                 "action": "generate",
                 "mockup_sets_to_use": ["ktbtee"],
                 "coords": { "x": 255, "y": 232, "w": 470, "h": 525 }
+            },
+            {
+                "pattern": "-Orament-X-mas.jpg",
+                "action": "generate",
+                "mockup_sets_to_use": ["ktbtee"],
+                "coords": { "x": 361, "y": 261, "w": 404, "h": 428 }
+            },
+            {
+                "pattern": "-v-neck-t-shirt.jpg",
+                "action": "generate",
+                "mockup_sets_to_use": ["ktbtee"],
+                "coords": { "x": 296, "y": 223, "w": 348, "h": 436 }
             }
         ],
         "dreameshirt.com": [
@@ -288,31 +300,10 @@
         ],
         "teeslocal.com": [
             {
-                "pattern": "-classic-mens.jpeg",
-                "action": "generate",
-                "mockup_sets_to_use": ["whatwillwear"],
-                "coords": { "x": 278, "y": 270, "w": 346, "h": 443 }
-            },
-            {
-                "pattern": "-shirt.jpg",
-                "action": "skip",
-                "mockup_sets_to_use": ["albumcoverprint"],
-                "coords": { "x": 364, "y": 233, "w": 298, "h": 387 },
-                "skipBlack": true
-            },
-            {
                 "pattern": "-T-Shirt.jpg",
-                "action": "skip",
-                "mockup_sets_to_use": ["ktbtee"],
+                "action": "generate",
+                "mockup_sets_to_use": ["albumcoverprint", "whatwillwear"],
                 "coords": { "x": 388, "y": 170, "w": 370, "h": 489 }
-            }
-        ],
-        "fanaticity.com": [
-            {
-                "pattern": "-T-Shirt.jpg",
-                "action": "generate",
-                "mockup_sets_to_use": ["whatwillwear"],
-                "coords": { "x": 404, "y": 186, "w": 326, "h": 425 }
             }
         ],
         "uscraftedtees.com": [
@@ -331,17 +322,10 @@
         ],
         "teehandus.com": [
             {
-                "pattern": "-long-sleeve.jpg",
-                "action": "skip",
-                "mockup_sets_to_use": ["albumcoverprint"],
-                "coords": { "x": 274, "y": 215, "w": 439, "h": 529 },
-                "skipWhite": true
-            },
-            {
-                "pattern": "-sweater.jpg",
+                "pattern": "-Sweater.jpg",
                 "action": "generate",
                 "mockup_sets_to_use": ["ktbtee", "whatwillwear"],
-                "coords": { "x": 84, "y": 213, "w": 320, "h": 382 }
+                "coords": { "x": 329, "y": 348, "w": 287, "h": 310 }
             }
         ],
         "legendusashirt.com": [
