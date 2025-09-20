@@ -1,12 +1,13 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-20 18:4257 +07
-
-Domain: geekteesus.com
-  Skipped Images: 6
-  Total URLs to Process: 6
+Timestamp: 2025-09-20 20:0811 +07
 
 Domain: teeworksusa.com
-  ktbtee: 12
+  ktbtee: 26
+  Skipped Images: 1
+  Total URLs to Process: 27
+
+Domain: uscraftedtees.com
+  whatwillwear: 39
   Skipped Images: 0
-  Total URLs to Process: 12
+  Total URLs to Process: 39
 
