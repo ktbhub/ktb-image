@@ -1,16 +1,18 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-20 09:3110 +07
+Timestamp: 2025-09-20 10:4934 +07
 
-Domain: geekteesus.com
-  Skipped Images: 33
-  Total URLs to Process: 33
+Domain: milkywayshirt.com
+  albumcoverprint: 14
+  Skipped Images: 2
+  Total URLs to Process: 16
 
-Domain: designatshop.com
+Domain: melonashirt.com
+  whatwillwear: 99
   Skipped Images: 1
-  Total URLs to Process: 1
+  Total URLs to Process: 100
 
-Domain: collectionpostertour.com
-  albumcoverprint: 20
-  Skipped Images: 18
-  Total URLs to Process: 38
+Domain: arjomany.com
+  whatwillwear: 67
+  Skipped Images: 0
+  Total URLs to Process: 67
 
