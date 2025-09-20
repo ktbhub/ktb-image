@@ -1,18 +1,8 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-20 08:5950 +07
-
-Domain: eteeclothing.com
-  ktbtee: 66
-  Skipped Images: 0
-  Total URLs to Process: 66
-
-Domain: legendusashirt.com
-  albumcoverprint: 60
-  Skipped Images: 26
-  Total URLs to Process: 86
+Timestamp: 2025-09-20 09:0718 +07
 
 Domain: teleteeshirt.com
-  albumcoverprint: 3
-  Skipped Images: 0
-  Total URLs to Process: 3
+  albumcoverprint: 15
+  Skipped Images: 1
+  Total URLs to Process: 16
 
