@@ -1,8 +1,13 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-20 22:4215 +07
+Timestamp: 2025-09-20 23:4520 +07
+
+Domain: legendusashirt.com
+  albumcoverprint: 102
+  Skipped Images: 29
+  Total URLs to Process: 131
 
 Domain: dalatshirt.com
-  albumcoverprint: 4
+  albumcoverprint: 84
   Skipped Images: 0
-  Total URLs to Process: 4
+  Total URLs to Process: 84
 
