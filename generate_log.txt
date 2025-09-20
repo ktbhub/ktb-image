@@ -1,8 +1,13 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-20 20:4543 +07
+Timestamp: 2025-09-20 21:3449 +07
 
-Domain: uscraftedtees.com
-  whatwillwear: 99
-  Skipped Images: 1
-  Total URLs to Process: 100
+Domain: teleteeshirt.com
+  albumcoverprint: 10
+  Skipped Images: 0
+  Total URLs to Process: 10
+
+Domain: mercuryshirt.com
+  albumcoverprint: 52
+  Skipped Images: 4
+  Total URLs to Process: 56
 
