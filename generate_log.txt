@@ -1,41 +1,52 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-20 11:5757 +07
+Timestamp: 2025-09-20 13:3248 +07
 
-Domain: berrylittles.com
-  whatwillwear: 9
+Domain: techteesusa.com
+  amertee: 37
   Skipped Images: 0
-  Total URLs to Process: 9
+  Total URLs to Process: 37
 
-Domain: dreameshirt.com
-  whatwillwear: 28
-  Skipped Images: 1
-  Total URLs to Process: 29
+Domain: teeextra.com
+  amertee: 31
+  Skipped Images: 0
+  Total URLs to Process: 31
 
-Domain: teespix.com
-  amertee: 91
-  Skipped Images: 2
+Domain: eteeclothing.com
+  ktbtee: 38
+  Skipped Images: 11
+  Total URLs to Process: 49
+
+Domain: serenashirt.com
+  albumcoverprint: 82
+  Skipped Images: 0
+  Total URLs to Process: 82
+
+Domain: legendusashirt.com
+  albumcoverprint: 61
+  Skipped Images: 32
   Total URLs to Process: 93
 
 Domain: clickoneshirt.com
-  Skipped Images: 8
-  Total URLs to Process: 8
+  Skipped Images: 2
+  Total URLs to Process: 2
 
-Domain: arjomany.com
-  Skipped Images: 38
-  Total URLs to Process: 38
+Domain: teeslocal.com
+  albumcoverprint: 192
+  Skipped Images: 0
+  Total URLs to Process: 192
+
+Domain: lovingsquad.com
+  whatwillwear: 59
+  Skipped Images: 3
+  Total URLs to Process: 62
 
 Domain: designatshop.com
-  albumcoverprint: 76
+  albumcoverprint: 74
   Skipped Images: 0
-  Total URLs to Process: 76
+  Total URLs to Process: 74
 
-Domain: collectionpostertour.com
-  albumcoverprint: 56
-  Skipped Images: 16
-  Total URLs to Process: 72
-
-Domain: newshirtstore.com
-  whatwillwear: 50
-  Skipped Images: 0
-  Total URLs to Process: 50
+Domain: mercuryshirt.com
+  albumcoverprint: 84
+  Skipped Images: 3
+  Total URLs to Process: 87
 
