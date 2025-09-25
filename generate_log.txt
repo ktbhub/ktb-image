@@ -1,0 +1,13 @@
+--- Summary of Last Generation ---
+Timestamp: 2025-09-26 09:52:23 +07
+
+Domain: arjomany.com
+  whatwillwear: 6
+  Skipped Images: 10
+  Total URLs to Process: 16
+
+Domain: designatshop.com
+  ktbtee: 6
+  Skipped Images: 22
+  Total URLs to Process: 28
+

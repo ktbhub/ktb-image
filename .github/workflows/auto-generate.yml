@@ -1,0 +1,87 @@
+name: KTB Image Generator
+
+on:
+  repository_dispatch:
+    types: [new_image_available]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout generator repo
+        uses: actions/checkout@v4
+        with:
+          path: .
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run generator
+        run: python generator/main.py
+
+      - name: Commit & push results
+        id: commit_push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add generated-zips generate_log.txt || true
+          
+          # Kiểm tra xem có thay đổi để commit không
+          if git diff-index --quiet HEAD; then
+            echo "No changes to commit."
+            echo "pushed=false" >> $GITHUB_OUTPUT
+          else
+            git commit -m "Generated new mockups and log [skip ci]"
+            git push
+            echo "pushed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Append push status to log
+        if: success() && steps.commit_push.outputs.pushed == 'true'
+        run: echo -e "\nPush successful." >> generate_log.txt
+
+      - name: Send Log Content to Telegram
+        if: success() # Chỉ chạy khi các bước trước (bao gồm cả push) đã thành công
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: |
+          LOG_CONTENT=$(cat generate_log.txt)
+          # Gửi dưới dạng pre-formatted text để giữ nguyên định dạng
+          curl -s -X POST https://api.telegram.org/bot$TELEGRAM_BOT_TOKEN/sendMessage \
+          -d chat_id=$TELEGRAM_CHAT_ID \
+          -d text="${LOG_CONTENT}" \
+          -d parse_mode=HTML || echo "Lỗi khi gửi nội dung log!"
+
+      # === BƯỚC NÀY ĐƯỢC CẬP NHẬT ĐỂ AN TOÀN HƠN ===
+      - name: Check for new zip files
+        id: check_zip_files
+        run: |
+          if [ -d "generated-zips" ] && ls generated-zips/*.zip 1> /dev/null 2>&1; then
+            echo "files_exist=true" >> $GITHUB_OUTPUT
+          else
+            echo "files_exist=false" >> $GITHUB_OUTPUT
+          fi
+
+      # === BƯỚC NÀY ĐƯỢC CẬP NHẬT VỚI ĐIỀU KIỆN `if` ===
+      - name: Trigger upload workflow on ktbupload
+        if: steps.check_zip_files.outputs.files_exist == 'true'
+        uses: actions/github-script@v6
+        with:
+          github-token: ${{ secrets.KTBGIT_PAT }}
+          script: |
+            github.rest.repos.createDispatchEvent({
+              owner: 'ktbgit',
+              repo: 'ktbupload',
+              event_type: 'upload-zip'
+            })
