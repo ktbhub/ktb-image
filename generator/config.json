@@ -478,6 +478,12 @@
                 "mockup_sets_to_use": ["albumcoverprint"],
                 "coords": { "x": 313, "y": 217, "w": 349, "h": 476 },
                 "skipWhite": true
+            },
+			{
+                "pattern": "-sweater.jpg",
+                "action": "generate",
+                "mockup_sets_to_use": ["albumcoverprint"],
+                "coords": { "x": 93, "y": 208, "w": 325, "h": 388 }
             }
         ]
     }
