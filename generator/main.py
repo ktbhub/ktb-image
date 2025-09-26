@@ -373,8 +373,11 @@ def main():
                 crop_coords = matched_rule.get("coords")
                 if not crop_coords: skipped_urls_for_domain.append(url); continue
                 
-                pixel = img.getpixel((crop_coords['x'], crop_coords['y'] + crop_coords['h'] - 1))
-                is_white = sum(pixel[:3]) / 3 > 128
+                pixel_x = crop_coords['x'] + crop_coords['w'] - 1
+                pixel_y = crop_coords['y'] + crop_coords['h'] - 1
+                pixel = img.getpixel((pixel_x, pixel_y))
+                avg_brightness = sum(pixel[:3]) / 3
+                is_white = avg_brightness > 128
 
                 if (matched_rule.get("skipWhite") and is_white) or (matched_rule.get("skipBlack") and not is_white):
                     skipped_urls_for_domain.append(url); continue
