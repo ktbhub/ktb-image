@@ -358,7 +358,7 @@
             },
             {
                 "pattern": "-Sweater.jpg",
-                "action": "generate",
+                "action": "skip",
                 "mockup_sets_to_use": ["whatwillwear"],
                 "coords": { "x": 401, "y": 185, "w": 359, "h": 458 }
             },
