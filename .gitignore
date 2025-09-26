@@ -26,3 +26,5 @@ CMD.txt
 *.sh
 generated-zips/
 SkipUrl/
+
+TotalImage.txt

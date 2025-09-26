@@ -1,4 +1,4 @@
-# main.py - Phiên bản cập nhật với TotalImage.txt
+# main.py - Phiên bản sửa lỗi sai tên file và phục hồi xử lý ảnh
 
 import os
 import requests
@@ -35,7 +35,7 @@ CONFIG_FILE = os.path.join(REPO_ROOT, "generator", "config.json")
 SKIP_URL_DIR = os.path.join(REPO_ROOT, "SkipUrl") 
 MAX_REPO_SIZE_MB = 900
 
-# --- CÁC HÀM HỖ TRỢ (Giữ nguyên) ---
+# --- CÁC HÀM HỖ TRỢ ---
 
 def _convert_to_gps(value, is_longitude):
     abs_value = abs(value)
@@ -129,21 +129,20 @@ def clean_title(title, keywords):
     return re.sub(r'\s+', ' ', re.sub(pattern, '', title, flags=re.IGNORECASE).replace('-', ' ')).strip()
 
 def process_image(design_img, mockup_img, mockup_config, user_config):
-    design_w, design_h = design_img.size
-    pixels = design_img.load()
-    for start_x, start_y in [(0, 0), (design_w - 1, 0), (0, design_h - 1), (design_w - 1, design_h - 1)]:
-        seed_color = design_img.getpixel((start_x, start_y))
-        ImageDraw.floodfill(design_img, (start_x, start_y), (0, 0, 0, 0), thresh=30)
+    ImageDraw.floodfill(design_img, (0, 0), (0, 0, 0, 0), thresh=30)
     trimmed_design = get_trimmed_image_with_padding(design_img)
     if not trimmed_design: return None
+    
     mockup_w, mockup_h = mockup_config['w'], mockup_config['h']
     scale = min(mockup_w / trimmed_design.width, mockup_h / trimmed_design.height)
     final_w, final_h = int(trimmed_design.width * scale), int(trimmed_design.height * scale)
     resized_design = trimmed_design.resize((final_w, final_h), Image.Resampling.LANCZOS)
+    
     final_x = mockup_config['x'] + (mockup_w - final_w) // 2
     final_y = mockup_config['y'] + 20
     final_mockup = mockup_img.copy()
     final_mockup.paste(resized_design, (final_x, final_y), resized_design)
+    
     watermark_content = user_config.get("watermark_text")
     if watermark_content:
         if watermark_content.startswith(('http://', 'https://')):
@@ -158,12 +157,13 @@ def process_image(design_img, mockup_img, mockup_config, user_config):
         else:
             draw = ImageDraw.Draw(final_mockup)
             try:
-                font = ImageFont.truetype(os.path.join(os.path.dirname(__file__), "verdanab.ttf"), 100)
+                font = ImageFont.truetype(os.path.join(os.path.dirname(os.path.abspath(__file__)), "verdanab.ttf"), 100)
             except IOError:
                 font = ImageFont.load_default()
             text_bbox = draw.textbbox((0, 0), watermark_content, font=font)
             text_w, text_h = text_bbox[2] - text_bbox[0], text_bbox[3] - text_bbox[1]
             draw.text((final_mockup.width - text_w - 20, final_mockup.height - text_h - 50), watermark_content, fill=(0, 0, 0, 128), font=font)
+            
     return final_mockup
 
 def get_repo_size(path='.'):
@@ -199,17 +199,24 @@ def setup_skip_url_dir():
 
 def update_gitignore():
     gitignore_path = os.path.join(REPO_ROOT, '.gitignore')
-    entry_to_add = "SkipUrl/"
+    entries_to_add = ["SkipUrl/", "TotalImage.txt"]
     try:
-        if not os.path.exists(gitignore_path):
-            with open(gitignore_path, 'w', encoding='utf-8') as f: f.write(entry_to_add + '\n')
-            print(f"📄 Đã tạo .gitignore và thêm '{entry_to_add}'.")
-            return
-        with open(gitignore_path, 'r+', encoding='utf-8') as f:
-            if not any(entry_to_add.strip('/') in line.strip().strip('/') for line in f.readlines()):
-                f.seek(0, os.SEEK_END)
-                f.write('\n' + entry_to_add + '\n')
-                print(f"✍️  Đã thêm '{entry_to_add}' vào .gitignore.")
+        lines = []
+        if os.path.exists(gitignore_path):
+            with open(gitignore_path, 'r', encoding='utf-8') as f:
+                lines = f.readlines()
+        
+        updated = False
+        with open(gitignore_path, 'a', encoding='utf-8') as f:
+            for entry in entries_to_add:
+                if not any(entry.strip('/') in line.strip().strip('/') for line in lines):
+                    f.write('\n' + entry + '\n')
+                    print(f"✍️  Đã thêm '{entry}' vào .gitignore.")
+                    updated = True
+        
+        if not updated:
+             print("📄 .gitignore đã được cập nhật.")
+
     except Exception as e:
         print(f"Lỗi khi cập nhật .gitignore: {e}")
 
@@ -217,6 +224,7 @@ def commit_and_push_changes_locally():
     print("Bắt đầu quá trình commit và push...")
     try:
         os.chdir(REPO_ROOT)
+        # THÊM TotalImage.txt vào git add
         subprocess.run(['git', 'add', 'generate_log.txt', '.gitignore', 'TotalImage.txt'], check=True)
         if not subprocess.run(['git', 'status', '--porcelain'], capture_output=True, text=True).stdout.strip():
             print("Không có thay đổi để commit.")
@@ -264,42 +272,27 @@ def write_log(urls_summary):
                 f.write(f"  Total URLs to Process: {counts['total_to_process']}\n\n")
     print(f"Generation summary saved to {log_file_path}")
 
-# --- CHỨC NĂNG MỚI ---
 def update_total_image_count(new_counts):
-    """
-    Đọc, cập nhật và ghi lại tổng số ảnh đã tạo vào file TotalImage.txt.
-    File này không bị xóa và sẽ được cộng dồn sau mỗi lần chạy.
-    """
     total_file_path = os.path.join(REPO_ROOT, "TotalImage.txt")
     totals = {}
-
-    # Bước 1: Đọc dữ liệu hiện có từ file (nếu file tồn tại)
     try:
         with open(total_file_path, 'r', encoding='utf-8') as f:
             for line in f:
                 if ':' in line:
-                    parts = line.split(':')
-                    mockup_name = parts[0].strip()
+                    parts = line.split(':', 1)
                     try:
-                        count = int(parts[1].strip())
-                        totals[mockup_name] = count
+                        totals[parts[0].strip()] = int(parts[1].strip())
                     except (ValueError, IndexError):
-                        print(f"Cảnh báo: Bỏ qua dòng không hợp lệ trong TotalImage.txt: {line.strip()}")
+                        pass
     except FileNotFoundError:
         print("Không tìm thấy file TotalImage.txt, sẽ tạo file mới.")
-
-    # Bước 2: Cộng dồn số lượng ảnh mới từ lần chạy này
     if not new_counts:
-        print("Không có ảnh mới nào được tạo trong lần này để cập nhật TotalImage.txt.")
+        print("Không có ảnh mới nào được tạo để cập nhật TotalImage.txt.")
         return
-        
     for mockup, count in new_counts.items():
         totals[mockup] = totals.get(mockup, 0) + count
-
-    # Bước 3: Ghi lại toàn bộ dữ liệu đã cập nhật vào file
     try:
         with open(total_file_path, 'w', encoding='utf-8') as f:
-            # Sắp xếp theo tên mockup để file luôn có thứ tự nhất quán
             for mockup in sorted(totals.keys()):
                 f.write(f"{mockup}: {totals[mockup]}\n")
         print(f"📊 Đã cập nhật tổng số ảnh trong {total_file_path}")
@@ -319,56 +312,66 @@ def main():
     
     cleanup_old_zips()
     configs = load_config()
-    defaults = configs.get("defaults", {})
+    defaults, domains_configs, mockup_sets_config = configs.get("defaults", {}), configs.get("domains", {}), configs.get("mockup_sets", {})
     output_format, exif_defaults = defaults.get("global_output_format", "webp").lower(), defaults.get("exif_defaults", {})
-    domains_configs, mockup_sets_config = configs.get("domains", {}), configs.get("mockup_sets", {})
     title_clean_keywords, global_skip_keywords = defaults.get("title_clean_keywords", []), defaults.get("global_skip_keywords", [])
 
     try:
         log_url = "https://raw.githubusercontent.com/ktbihow/imagecrawler/main/imagecrawler.log"
         log_content = requests.get(log_url).text if IS_GITHUB_ACTIONS else open(CRAWLER_LOG_FILE, 'r', encoding='utf-8').read()
     except Exception as e:
-        print(f"Lỗi: Không thể tải/đọc file imagecrawler.log. {e}")
-        return
+        print(f"Lỗi: Không thể tải/đọc file imagecrawler.log. {e}"); return
 
     domains_to_process = {p[0].strip(): int(p[1].split()[0]) for l in log_content.splitlines() if "New Images" in l for p in [l.split(":")] if int(p[1].split()[0]) > 0}
     if not domains_to_process:
-        print("Không có URL mới nào được tìm thấy. Kết thúc.")
-        return
+        print("Không có URL mới nào được tìm thấy. Kết thúc."); return
         
     urls_summary, images_for_zip = {}, {}
-    # THAY ĐỔI 1: Tạo dict để lưu tổng số ảnh của lần chạy này
     total_processed_this_run = {}
 
     for domain, new_count in domains_to_process.items():
         print(f"Bắt đầu xử lý {new_count} ảnh mới từ domain: {domain}")
-        skipped_urls_for_domain = []
+        
+        skipped_urls_for_domain, processed_by_mockup = [], {}
+        mockup_cache = {}
+        
         try:
             urls_url = f"https://raw.githubusercontent.com/ktbihow/imagecrawler/main/domain/{domain}.txt"
             all_urls = (requests.get(urls_url).text if IS_GITHUB_ACTIONS else open(os.path.join(CRAWLER_DOMAIN_DIR, f"{domain}.txt"), 'r', encoding='utf-8').read()).splitlines()
         except Exception as e:
-            print(f"Lỗi: Không thể tải/đọc file URL cho domain {domain}. Bỏ qua. {e}")
-            continue
+            print(f"Lỗi: Không thể tải/đọc file URL cho domain {domain}. Bỏ qua. {e}"); continue
         
-        urls_to_process, processed_by_mockup = all_urls[:new_count], {}
-        # ... (Phần logic xử lý ảnh giữ nguyên, được tóm gọn để dễ đọc) ...
-        for url in urls_to_process:
+        domain_rules = sorted(domains_configs.get(domain, []), key=lambda x: len(x.get('pattern', '')), reverse=True)
+        
+        mockups_to_load = {mn for rule in domain_rules for mn in rule.get("mockup_sets_to_use", [])}
+        for mockup_name in mockups_to_load:
+            if mockup_name in mockup_sets_config:
+                cfg = mockup_sets_config[mockup_name]
+                mockup_cache[mockup_name] = {
+                    "white": download_image(cfg.get("white")), "black": download_image(cfg.get("black")),
+                    "coords": cfg.get("coords"), "watermark_text": cfg.get("watermark_text"),
+                    "title_prefix_to_add": cfg.get("title_prefix_to_add", ""), "title_suffix_to_add": cfg.get("title_suffix_to_add", "")
+                }
+
+        for url in all_urls[:new_count]:
             if get_repo_size(REPO_ROOT) >= MAX_REPO_SIZE_MB:
                 print(f"Đã đạt giới hạn dung lượng. Dừng lại."); break
-            filename = os.path.basename(url)
-            if should_globally_skip(filename, global_skip_keywords): continue
             
-            domain_rules = sorted(domains_configs.get(domain, []), key=lambda x: len(x.get('pattern', '')), reverse=True)
+            filename = os.path.basename(url)
+            if should_globally_skip(filename, global_skip_keywords):
+                skipped_urls_for_domain.append(url); continue
+            
             matched_rule = next((r for r in domain_rules if r.get("pattern", "") in filename), None)
             
             if not matched_rule or matched_rule.get("action") == "skip":
                 print(f"Skipping: Rule not found or action is 'skip' for file: {filename}"); skipped_urls_for_domain.append(url); continue
-            
+
             try:
                 img = download_image(url)
-                if not img: continue
+                if not img: skipped_urls_for_domain.append(url); continue
+                
                 crop_coords = matched_rule.get("coords")
-                if not crop_coords: continue
+                if not crop_coords: skipped_urls_for_domain.append(url); continue
                 
                 pixel = img.getpixel((crop_coords['x'], crop_coords['y'] + crop_coords['h'] - 1))
                 is_white = sum(pixel[:3]) / 3 > 128
@@ -377,14 +380,42 @@ def main():
                     skipped_urls_for_domain.append(url); continue
                 
                 cropped_img = img.crop((crop_coords['x'], crop_coords['y'], crop_coords['x'] + crop_coords['w'], crop_coords['y'] + crop_coords['h']))
+                
                 for mockup_name in matched_rule.get("mockup_sets_to_use", []):
-                    # ... (logic xử lý và ghép ảnh chi tiết) ...
-                    final_filename = "example.webp" # Giả định
-                    img_byte_arr_value = b'' # Giả định
-                    images_for_zip.setdefault(mockup_name, {}).setdefault(domain, []).append((final_filename, img_byte_arr_value))
+                    # === PHỤC HỒI LOGIC XỬ LÝ ẢNH CHI TIẾT ===
+                    if mockup_name not in mockup_cache: continue
+                    
+                    mockup_data = mockup_cache[mockup_name]
+                    mockup_to_use = mockup_data["white"] if is_white else mockup_data["black"]
+                    if not mockup_to_use: continue
+                    
+                    user_config = {"watermark_text": mockup_data.get("watermark_text")}
+                    final_mockup = process_image(cropped_img.copy(), mockup_to_use, mockup_data.get("coords"), user_config)
+                    if not final_mockup: continue
+
+                    base_filename = os.path.splitext(filename)[0]
+                    if matched_rule.get("pre_clean_regex"):
+                        base_filename = re.sub(matched_rule["pre_clean_regex"], '', base_filename)
+                    
+                    cleaned_title = clean_title(base_filename, title_clean_keywords)
+                    prefix = mockup_data.get("title_prefix_to_add", "")
+                    suffix = mockup_data.get("title_suffix_to_add", "")
+                    final_filename_base = f"{prefix} {cleaned_title} {suffix}".strip().replace('  ', ' ')
+                    
+                    save_format, ext = ("WEBP", ".webp") if output_format != "jpeg" and output_format != "jpg" else ("JPEG", ".jpg")
+                    final_filename = final_filename_base + ext
+                    
+                    image_to_save = final_mockup.convert('RGB') if save_format == "JPEG" else final_mockup
+                    exif_bytes = create_exif_data(prefix=mockup_name, final_filename=final_filename, exif_defaults=exif_defaults)
+                    
+                    img_byte_arr = BytesIO()
+                    image_to_save.save(img_byte_arr, format=save_format, quality=90, exif=exif_bytes)
+                    
+                    images_for_zip.setdefault(mockup_name, {}).setdefault(domain, []).append((final_filename, img_byte_arr.getvalue()))
                     processed_by_mockup[mockup_name] = processed_by_mockup.get(mockup_name, 0) + 1
+                    # === KẾT THÚC PHẦN PHỤC HỒI ===
             except Exception as e:
-                print(f"Lỗi khi xử lý ảnh {url}: {e}")
+                print(f"Lỗi khi xử lý ảnh {url}: {e}"); skipped_urls_for_domain.append(url)
         
         if skipped_urls_for_domain:
             timestamp = datetime.now(pytz.timezone('Asia/Ho_Chi_Minh')).strftime('%Y%m%d_%H%M%S')
@@ -395,11 +426,9 @@ def main():
 
         urls_summary[domain] = {'processed_by_mockup': processed_by_mockup, 'skipped': len(skipped_urls_for_domain), 'total_to_process': new_count}
         
-        # THAY ĐỔI 2: Cộng dồn số ảnh của domain này vào tổng của lần chạy
         for mockup, count in processed_by_mockup.items():
             total_processed_this_run[mockup] = total_processed_this_run.get(mockup, 0) + count
 
-    # THAY ĐỔI 3: Gọi hàm mới để cập nhật file TotalImage.txt
     update_total_image_count(total_processed_this_run)
 
     for mockup_name, domains_dict in images_for_zip.items():
@@ -407,10 +436,11 @@ def main():
             if not image_list: continue
             now_vietnam = datetime.now(pytz.timezone('Asia/Ho_Chi_Minh'))
             zip_filename = f"{mockup_name}.{domain_name.split('.')[0]}.{now_vietnam.strftime('%Y%m%d_%H%M%S')}.{len(image_list)}.zip"
-            with zipfile.ZipFile(os.path.join(output_path, zip_filename), 'w') as zf:
+            zip_path = os.path.join(output_path, zip_filename)
+            print(f"Đang tạo file: {zip_path} với {len(image_list)} ảnh.")
+            with zipfile.ZipFile(zip_path, 'w') as zf:
                 for filename, data in image_list:
                     zf.writestr(filename, data)
-            print(f"Đang tạo file: {zip_filename} với {len(image_list)} ảnh.")
 
     write_log(urls_summary)
     print("Hoàn thành tạo file zip và log.")

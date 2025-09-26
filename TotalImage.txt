@@ -1,3 +1,3 @@
-albumcoverprint: 54
-ktbtee: 6
-whatwillwear: 122
+albumcoverprint: 62
+ktbtee: 8
+whatwillwear: 244
