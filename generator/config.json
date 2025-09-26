@@ -304,13 +304,13 @@
                 "pattern": "-Shirt.webp",
                 "action": "generate",
                 "mockup_sets_to_use": ["whatwillwear"],
-                "coords": { "x": 172, "y": 170, "w": 343, "h": 379 }
+                "coords": { "x": 172, "y": 172, "w": 324, "h": 366 }
             },
             {
                 "pattern": "-Shirt.jpg",
                 "action": "generate",
                 "mockup_sets_to_use": ["whatwillwear"],
-                "coords": { "x": 172, "y": 170, "w": 343, "h": 379 }
+                "coords": { "x": 172, "y": 172, "w": 324, "h": 366 }
             }
         ],
         "legendusashirt.com": [
