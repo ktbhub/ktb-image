@@ -315,18 +315,16 @@
         ],
         "legendusashirt.com": [
             {
-                "pattern": "-Sweater.webp",
+                "pattern": "-Long-Sleve.jpg",
                 "action": "generate",
                 "mockup_sets_to_use": ["albumcoverprint"],
-                "coords": { "x": 292, "y": 163, "w": 403, "h": 529 },
-                "skipWhite": true
+                "coords": { "x": 283, "y": 148, "w": 384, "h": 463 }
             },
             {
-                "pattern": "-Sweater.jpg",
+                "pattern": "-Ladies.jpg",
                 "action": "generate",
                 "mockup_sets_to_use": ["albumcoverprint"],
-                "coords": { "x": 292, "y": 163, "w": 403, "h": 529 },
-                "skipWhite": true
+                "coords": { "x": 301, "y": 149, "w": 375, "h": 492 }
             }
         ],
         "melonashirt.com": [

@@ -1,13 +1,18 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-26 09:52:23 +07
+Timestamp: 2025-09-26 13:33:41 +07
 
-Domain: arjomany.com
-  whatwillwear: 6
-  Skipped Images: 10
-  Total URLs to Process: 16
+Domain: meredpremium.com
+  amertee: 46
+  Skipped Images: 0
+  Total URLs to Process: 46
 
-Domain: designatshop.com
-  ktbtee: 6
-  Skipped Images: 22
-  Total URLs to Process: 28
+Domain: lovingsquad.com
+  whatwillwear: 29
+  Skipped Images: 18
+  Total URLs to Process: 47
+
+Domain: mercuryshirt.com
+  albumcoverprint: 17
+  Skipped Images: 1
+  Total URLs to Process: 18
 
