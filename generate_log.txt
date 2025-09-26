@@ -1,18 +1,11 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-26 13:33:41 +07
+Timestamp: 2025-09-26 14:25:55 +07
 
-Domain: meredpremium.com
-  amertee: 46
-  Skipped Images: 0
-  Total URLs to Process: 46
+Domain: techteesusa.com
+  Skipped Images: 16
+  Total URLs to Process: 16
 
-Domain: lovingsquad.com
-  whatwillwear: 29
-  Skipped Images: 18
-  Total URLs to Process: 47
-
-Domain: mercuryshirt.com
-  albumcoverprint: 17
-  Skipped Images: 1
-  Total URLs to Process: 18
+Domain: newshirtstore.com
+  Skipped Images: 31
+  Total URLs to Process: 31
 
