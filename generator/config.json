@@ -445,6 +445,12 @@
                 "mockup_sets_to_use": ["albumcoverprint"],
                 "coords": { "x": 145, "y": 159, "w": 422, "h": 579 },
                 "skipWhite": true
+            },
+			{
+                "pattern": "-ornament-Ornaments.jpg",
+                "action": "generate",
+                "mockup_sets_to_use": ["albumcoverprint"],
+                "coords": { "x": 317, "y": 253, "w": 382, "h": 442 }
             }
         ],
         "berrylittles.com": [
