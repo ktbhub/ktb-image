@@ -480,9 +480,11 @@ def main():
                 if not crop_coords:
                     skipped_count += 1
                     continue
-                pixel = img.getpixel((crop_coords['x'], crop_coords['y']))
+                # THAY ĐỔI: Lấy điểm ảnh ở góc dưới-trái của vùng crop để xác định màu
+                pixel_x = crop_coords['x']
+                pixel_y = crop_coords['y'] + crop_coords['h'] - 1
+                pixel = img.getpixel((pixel_x, pixel_y))
                 avg_brightness = sum(pixel[:3]) / 3
-                is_white = avg_brightness > 128
 
                 if matched_rule.get("skipWhite") and is_white:
                     # THAY ĐỔI MỚI: Ghi lại URL bị bỏ qua
