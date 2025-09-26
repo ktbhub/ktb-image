@@ -395,6 +395,12 @@
                 "mockup_sets_to_use": ["ktbtee"],
                 "coords": { "x": 330, "y": 356, "w": 385, "h": 534 },
                 "skipBlack": true
+            },
+            {
+                "pattern": "-sweater.jpg",
+                "action": "generate",
+                "mockup_sets_to_use": ["ktbtee"],
+                "coords": { "x": 98, "y": 268, "w": 401, "h": 431 }
             }
         ],
         "collectionpostertour.com": [
