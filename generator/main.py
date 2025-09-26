@@ -1,4 +1,4 @@
-# main.py - Phiên bản cập nhật với .env và git commit --amend
+# main.py - Phiên bản cập nhật với .env, git commit --amend và chức năng ghi log URL bị bỏ qua
 
 import os
 import requests
@@ -13,9 +13,9 @@ import piexif
 from urllib.parse import quote
 import random
 import subprocess 
-from dotenv import load_dotenv # THAY ĐỔI: Thêm thư viện dotenv
+from dotenv import load_dotenv
 
-# --- PHÁT HIỆN MÔI TRƯỜDNG VÀ TẢI .ENV ---
+# --- PHÁT HIỆN MÔI TRƯỜNG VÀ TẢI .ENV ---
 IS_GITHUB_ACTIONS = os.getenv('GITHUB_ACTIONS') == 'true'
 
 # --- Cấu hình ---
@@ -23,7 +23,6 @@ REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 if not IS_GITHUB_ACTIONS:
     print("🖥️  Đang chạy trên PC cục bộ, tải biến môi trường từ .env...")
-    # THAY ĐỔI: Tải các biến từ file .env στο thư mục gốc
     load_dotenv(dotenv_path=os.path.join(REPO_ROOT, '.env'))
     CRAWLER_REPO_PATH = os.path.join(os.path.dirname(REPO_ROOT), 'imagecrawler')
     CRAWLER_LOG_FILE = os.path.join(CRAWLER_REPO_PATH, 'imagecrawler.log')
@@ -33,10 +32,12 @@ else:
 
 OUTPUT_DIR = "generated-zips"
 CONFIG_FILE = os.path.join(REPO_ROOT, "generator", "config.json")
+# THAY ĐỔI: Thêm hằng số cho thư mục SkipUrl
+SKIP_URL_DIR = os.path.join(REPO_ROOT, "SkipUrl") 
 MAX_REPO_SIZE_MB = 900
 
 # --- (Toàn bộ các hàm hỗ trợ từ _convert_to_gps đến cleanup_old_zips giữ nguyên) ---
-# ... (Giả sử các hàm này đã có ở đây)
+
 def _convert_to_gps(value, is_longitude):
     """Chuyển đổi tọa độ thập phân sang định dạng EXIF GPS."""
     abs_value = abs(value)
@@ -158,7 +159,6 @@ def clean_title(title, keywords):
 
 def process_image(design_img, mockup_img, mockup_config, user_config):
     """Xử lý và ghép ảnh."""
-    # ... (Toàn bộ hàm này được giữ nguyên, không cần thay đổi)
     design_w, design_h = design_img.size
     pixels = design_img.load()
     visited = set()
@@ -237,32 +237,70 @@ def cleanup_old_zips():
                 print(f"Lỗi khi xóa {filename}: {e}")
     print("Dọn dẹp hoàn tất.")
 
-# --- CÁC HÀM MỚI CHO PC (ĐÃ CẬP NHẬT) ---
+# --- CÁC HÀM MỚI ---
+
+def setup_skip_url_dir():
+    """
+    THAY ĐỔI MỚI: Tạo và dọn dẹp thư mục SkipUrl.
+    """
+    if not os.path.exists(SKIP_URL_DIR):
+        print(f"📁 Tạo thư mục: {SKIP_URL_DIR}")
+        os.makedirs(SKIP_URL_DIR)
+    else:
+        print(f"🧹 Dọn dẹp thư mục: {SKIP_URL_DIR}")
+        for filename in os.listdir(SKIP_URL_DIR):
+            if filename.endswith(".txt"):
+                file_path = os.path.join(SKIP_URL_DIR, filename)
+                try:
+                    os.remove(file_path)
+                except Exception as e:
+                    print(f"Lỗi khi xóa file {file_path}: {e}")
+
+def update_gitignore():
+    """
+    THAY ĐỔI MỚI: Thêm 'SkipUrl/' vào .gitignore nếu chưa có.
+    """
+    gitignore_path = os.path.join(REPO_ROOT, '.gitignore')
+    entry_to_add = "SkipUrl/"
+    try:
+        if not os.path.exists(gitignore_path):
+            with open(gitignore_path, 'w', encoding='utf-8') as f:
+                f.write(entry_to_add + '\n')
+            print(f"📄 Đã tạo .gitignore và thêm '{entry_to_add}'.")
+            return
+
+        with open(gitignore_path, 'r+', encoding='utf-8') as f:
+            lines = f.readlines()
+            # Kiểm tra xem entry đã tồn tại chưa (có thể có hoặc không có dấu / ở cuối)
+            if not any(entry_to_add.strip('/') in line.strip().strip('/') for line in lines):
+                f.seek(0, os.SEEK_END) # Di chuyển đến cuối file
+                f.write('\n' + entry_to_add + '\n')
+                print(f"✍️  Đã thêm '{entry_to_add}' vào .gitignore.")
+    except Exception as e:
+        print(f"Lỗi khi cập nhật .gitignore: {e}")
+
 
 def commit_and_push_changes_locally():
     """
-    THAY ĐỔI: Thực hiện git add, commit --amend, và push --force.
+    Thực hiện git add, commit --amend, và push --force.
     Chỉ chạy trên PC.
     """
     print("Bắt đầu quá trình commit và push...")
     try:
         os.chdir(REPO_ROOT)
         
-        # Add các file đã tạo
         subprocess.run(['git', 'add', 'generate_log.txt'], check=True)
+        # THAY ĐỔI MỚI: Add cả file .gitignore nếu có thay đổi
+        subprocess.run(['git', 'add', '.gitignore'], check=True)
 
-        # Kiểm tra xem có thay đổi nào không
         result = subprocess.run(['git', 'status', '--porcelain'], capture_output=True, text=True)
         if not result.stdout.strip():
             print("Không có thay đổi để commit.")
             return False
 
         print("Phát hiện thay đổi. Bắt đầu amend commit...")
-        # Sử dụng --amend để gộp vào commit trước đó, --no-edit để không mở editor
-        # Điều này giả định bạn đã có ít nhất một commit ban đầu với message phù hợp.
         subprocess.run(['git', 'commit', '--amend', '--no-edit'], check=True)
         
-        # Lấy tên nhánh hiện tại
         branch_result = subprocess.run(
             ['git', 'rev-parse', '--abbrev-ref', 'HEAD'], 
             capture_output=True, text=True, check=True
@@ -270,7 +308,6 @@ def commit_and_push_changes_locally():
         current_branch = branch_result.stdout.strip()
         
         print(f"Commit amend thành công. Bắt đầu force push lên nhánh '{current_branch}'...")
-        # Phải dùng --force vì lịch sử đã bị thay đổi bởi --amend
         subprocess.run(['git', 'push', '--force', 'origin', current_branch], check=True)
         
         print("Push thành công.")
@@ -287,10 +324,9 @@ def commit_and_push_changes_locally():
 
 def send_telegram_log_locally():
     """
-    THAY ĐỔI: Gửi nội dung log qua Telegram, đọc secrets từ .env.
+    Gửi nội dung log qua Telegram, đọc secrets từ .env.
     Chỉ chạy trên PC.
     """
-    # Đọc token và chat_id từ biến môi trường đã được load từ file .env
     token = os.getenv("TELEGRAM_BOT_TOKEN")
     chat_id = os.getenv("TELEGRAM_CHAT_ID")
 
@@ -316,12 +352,16 @@ def send_telegram_log_locally():
         print(f"Lỗi khi gửi nội dung log tới Telegram: {e}")
 
 
-# --- (Hàm main() và các hàm còn lại giữ nguyên cấu trúc) ---
+# --- Hàm main() ---
 def main():
-    # ...
-    # (Toàn bộ logic xử lý ảnh và tạo file zip không thay đổi)
-    # ...
     print("Bắt đầu quy trình tự động generate mockup.")
+    
+    # --- THAY ĐỔI MỚI: Thiết lập các thư mục và .gitignore ---
+    setup_skip_url_dir() 
+    if not IS_GITHUB_ACTIONS:
+        update_gitignore()
+    # --- KẾT THÚC THAY ĐỔI ---
+
     output_path = os.path.join(REPO_ROOT, OUTPUT_DIR)
     if not os.path.exists(output_path):
         os.makedirs(output_path)
@@ -368,6 +408,9 @@ def main():
     for domain, new_count in domains_to_process.items():
         print(f"Bắt đầu xử lý {new_count} ảnh mới từ domain: {domain}")
         
+        # THAY ĐỔI MỚI: Khởi tạo danh sách để lưu các URL bị bỏ qua cho domain hiện tại
+        skipped_urls_for_domain = []
+
         all_urls = []
         try:
             if IS_GITHUB_ACTIONS:
@@ -416,10 +459,14 @@ def main():
                 skipped_count += 1
                 continue
             matched_rule = next((rule for rule in domain_rules if rule.get("pattern", "") in filename), None)
+            
             if not matched_rule or matched_rule.get("action") == "skip":
                 print(f"Skipping: Rule not found or action is 'skip' for file: {filename}")
+                # THAY ĐỔI MỚI: Ghi lại URL bị bỏ qua
+                skipped_urls_for_domain.append(url)
                 skipped_count += 1
                 continue
+            
             mockup_sets_to_use = matched_rule.get("mockup_sets_to_use", [])
             if not mockup_sets_to_use:
                 skipped_count += 1
@@ -436,12 +483,18 @@ def main():
                 pixel = img.getpixel((crop_coords['x'], crop_coords['y']))
                 avg_brightness = sum(pixel[:3]) / 3
                 is_white = avg_brightness > 128
+
                 if matched_rule.get("skipWhite") and is_white:
+                    # THAY ĐỔI MỚI: Ghi lại URL bị bỏ qua
+                    skipped_urls_for_domain.append(url)
                     skipped_count += 1
                     continue
                 if matched_rule.get("skipBlack") and not is_white:
+                    # THAY ĐỔI MỚI: Ghi lại URL bị bỏ qua
+                    skipped_urls_for_domain.append(url)
                     skipped_count += 1
                     continue
+
                 cropped_img = img.crop((crop_coords['x'], crop_coords['y'], crop_coords['x'] + crop_coords['w'], crop_coords['y'] + crop_coords['h']))
                 for mockup_name in mockup_sets_to_use:
                     if mockup_name not in mockup_cache: continue
@@ -471,6 +524,16 @@ def main():
             except Exception as e:
                 print(f"Lỗi khi xử lý ảnh {url}: {e}")
                 skipped_count += 1
+        
+        # --- THAY ĐỔI MỚI: Ghi file log cho các URL đã bỏ qua của domain này ---
+        if skipped_urls_for_domain:
+            skip_log_path = os.path.join(SKIP_URL_DIR, f"{domain}.txt")
+            print(f"📝 Ghi {len(skipped_urls_for_domain)} URL bị bỏ qua vào file: {skip_log_path}")
+            with open(skip_log_path, 'w', encoding='utf-8') as f:
+                for skipped_url in skipped_urls_for_domain:
+                    f.write(skipped_url + '\n')
+        # --- KẾT THÚC THAY ĐỔI ---
+
         urls_summary[domain] = {'processed_by_mockup': processed_by_mockup, 'skipped': skipped_count, 'total_to_process': new_count}
         
     for mockup_name, domains_dict in images_for_zip.items():
@@ -500,7 +563,6 @@ def main():
     print("Kết thúc quy trình.")
 
 def write_log(urls_summary):
-    # ... (Hàm này giữ nguyên)
     vietnam_tz = pytz.timezone('Asia/Ho_Chi_Minh')
     now_vietnam = datetime.now(vietnam_tz)
     log_file_path = os.path.join(REPO_ROOT, "generate_log.txt")
