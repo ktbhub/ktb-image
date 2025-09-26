@@ -356,11 +356,9 @@ def send_telegram_log_locally():
 def main():
     print("Bắt đầu quy trình tự động generate mockup.")
     
-    # --- THAY ĐỔI MỚI: Thiết lập các thư mục và .gitignore ---
     setup_skip_url_dir() 
     if not IS_GITHUB_ACTIONS:
         update_gitignore()
-    # --- KẾT THÚC THAY ĐỔI ---
 
     output_path = os.path.join(REPO_ROOT, OUTPUT_DIR)
     if not os.path.exists(output_path):
@@ -376,11 +374,10 @@ def main():
     title_clean_keywords = defaults.get("title_clean_keywords", [])
     global_skip_keywords = defaults.get("global_skip_keywords", [])
 
-    # --- LẤY DỮ LIỆU LOG THEO MÔI TRƯỜNG ---
     log_content = ""
     try:
         if IS_GITHUB_ACTIONS:
-            log_url = "https://raw.githubusercontent.com/ktbihow/imagecrawler/main/imagecrawler.log"
+            log_url = "https://raw.githubusercontent.com/ktbteam/imagecrawler/main/imagecrawler.log"
             log_content = requests.get(log_url).text
         else:
             with open(CRAWLER_LOG_FILE, 'r', encoding='utf-8') as f:
@@ -408,13 +405,12 @@ def main():
     for domain, new_count in domains_to_process.items():
         print(f"Bắt đầu xử lý {new_count} ảnh mới từ domain: {domain}")
         
-        # THAY ĐỔI MỚI: Khởi tạo danh sách để lưu các URL bị bỏ qua cho domain hiện tại
         skipped_urls_for_domain = []
 
         all_urls = []
         try:
             if IS_GITHUB_ACTIONS:
-                urls_url = f"https://raw.githubusercontent.com/ktbihow/imagecrawler/main/domain/{domain}.txt"
+                urls_url = f"https://raw.githubusercontent.com/ktbteam/imagecrawler/main/domain/{domain}.txt"
                 all_urls_content = requests.get(urls_url).text
                 all_urls = [line.strip() for line in all_urls_content.splitlines() if line.strip()]
             else:
@@ -462,7 +458,6 @@ def main():
             
             if not matched_rule or matched_rule.get("action") == "skip":
                 print(f"Skipping: Rule not found or action is 'skip' for file: {filename}")
-                # THAY ĐỔI MỚI: Ghi lại URL bị bỏ qua
                 skipped_urls_for_domain.append(url)
                 skipped_count += 1
                 continue
@@ -480,22 +475,31 @@ def main():
                 if not crop_coords:
                     skipped_count += 1
                     continue
-                # THAY ĐỔI: Lấy điểm ảnh ở góc dưới-trái của vùng crop để xác định màu
+                
+                # =============================================================
+                # KHỐI CODE ĐÃ ĐƯỢC SẮP XẾP LẠI ĐỂ SỬA LỖI
+                # =============================================================
+
+                # BƯỚC 1: Xác định tọa độ và lấy màu từ điểm ảnh
                 pixel_x = crop_coords['x']
                 pixel_y = crop_coords['y'] + crop_coords['h'] - 1
                 pixel = img.getpixel((pixel_x, pixel_y))
-                avg_brightness = sum(pixel[:3]) / 3
 
+                # BƯỚC 2: Từ màu sắc, tạo ra biến is_white
+                avg_brightness = sum(pixel[:3]) / 3
+                is_white = avg_brightness > 128
+
+                # BƯỚC 3: Bây giờ mới sử dụng biến is_white để kiểm tra
                 if matched_rule.get("skipWhite") and is_white:
-                    # THAY ĐỔI MỚI: Ghi lại URL bị bỏ qua
                     skipped_urls_for_domain.append(url)
                     skipped_count += 1
                     continue
                 if matched_rule.get("skipBlack") and not is_white:
-                    # THAY ĐỔI MỚI: Ghi lại URL bị bỏ qua
                     skipped_urls_for_domain.append(url)
                     skipped_count += 1
                     continue
+                
+                # =============================================================
 
                 cropped_img = img.crop((crop_coords['x'], crop_coords['y'], crop_coords['x'] + crop_coords['w'], crop_coords['y'] + crop_coords['h']))
                 for mockup_name in mockup_sets_to_use:
@@ -527,14 +531,12 @@ def main():
                 print(f"Lỗi khi xử lý ảnh {url}: {e}")
                 skipped_count += 1
         
-        # --- THAY ĐỔI MỚI: Ghi file log cho các URL đã bỏ qua của domain này ---
         if skipped_urls_for_domain:
             skip_log_path = os.path.join(SKIP_URL_DIR, f"{domain}.txt")
             print(f"📝 Ghi {len(skipped_urls_for_domain)} URL bị bỏ qua vào file: {skip_log_path}")
             with open(skip_log_path, 'w', encoding='utf-8') as f:
                 for skipped_url in skipped_urls_for_domain:
                     f.write(skipped_url + '\n')
-        # --- KẾT THÚC THAY ĐỔI ---
 
         urls_summary[domain] = {'processed_by_mockup': processed_by_mockup, 'skipped': skipped_count, 'total_to_process': new_count}
         
