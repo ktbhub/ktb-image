@@ -354,15 +354,13 @@
                 "pattern": "-Ladies-tee.jpg",
                 "action": "generate",
                 "mockup_sets_to_use": ["whatwillwear"],
-                "coords": { "x": 341, "y": 155, "w": 366, "h": 443 },
-                "skipWhite": true
+                "coords": { "x": 341, "y": 155, "w": 366, "h": 443 }
             },
             {
                 "pattern": "-Sweater.jpg",
                 "action": "generate",
                 "mockup_sets_to_use": ["whatwillwear"],
-                "coords": { "x": 305, "y": 185, "w": 404, "h": 509 },
-                "skipWhite": true
+                "coords": { "x": 401, "y": 185, "w": 359, "h": 458 }
             },
             {
                 "pattern": "-Ladies.jpg",
