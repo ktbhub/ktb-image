@@ -476,8 +476,8 @@
                 "pattern": "-Sweater.jpg",
                 "action": "generate",
                 "mockup_sets_to_use": ["albumcoverprint"],
-                "coords": { "x": 331, "y": 346, "w": 282, "h": 313 },
-                "skipBlack": true
+                "coords": { "x": 313, "y": 217, "w": 349, "h": 476 },
+                "skipWhite": true
             }
         ]
     }

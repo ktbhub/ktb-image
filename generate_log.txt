@@ -1,13 +1,21 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-26 14:33:16 +07
+Timestamp: 2025-09-26 16:13:30 +07
 
-Domain: techteesusa.com
-  amertee: 16
-  Skipped Images: 0
-  Total URLs to Process: 16
+Domain: teehandus.com
+  Skipped Images: 12
+  Total URLs to Process: 12
 
-Domain: newshirtstore.com
-  whatwillwear: 31
+Domain: capitoneshirt.com
+  ktbtee: 77
   Skipped Images: 0
-  Total URLs to Process: 31
+  Total URLs to Process: 77
+
+Domain: dalatshirt.com
+  albumcoverprint: 6
+  Skipped Images: 0
+  Total URLs to Process: 6
+
+Domain: arjomany.com
+  Skipped Images: 15
+  Total URLs to Process: 15
 
