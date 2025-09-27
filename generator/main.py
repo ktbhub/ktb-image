@@ -214,19 +214,11 @@ def cleanup_old_zips():
     print("Dọn dẹp hoàn tất.")
 
 def setup_skip_url_dir():
+    # Chỉ kiểm tra và tạo thư mục nếu nó chưa tồn tại.
+    # Không thực hiện bất kỳ hành động dọn dẹp nào nữa.
     if not os.path.exists(SKIP_URL_DIR):
-        print(f"📁 Tạo thư mục: {SKIP_URL_DIR}")
+        print(f"📁 Tạo thư mục lần đầu: {SKIP_URL_DIR}")
         os.makedirs(SKIP_URL_DIR)
-    else:
-        print(f"🧹 Dọn dẹp thư mục log tạm trong: {SKIP_URL_DIR}")
-        for filename in os.listdir(SKIP_URL_DIR):
-            if filename.endswith(".txt") and filename.count('.') == 2:
-                file_path = os.path.join(SKIP_URL_DIR, filename)
-                try:
-                    print(f"   -> Xóa file log cũ: {filename}")
-                    os.remove(file_path)
-                except Exception as e:
-                    print(f"Lỗi khi xóa file {file_path}: {e}")
 
 def update_gitignore():
     gitignore_path = os.path.join(REPO_ROOT, '.gitignore')
