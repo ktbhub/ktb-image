@@ -1,7 +1,13 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-27 15:51:05 +07
+Timestamp: 2025-09-27 16:59:33 +07
 
-Domain: teeworksusa.com
-  Skipped Images: 13
-  Total URLs to Process: 13
+Domain: teespix.com
+  amertee: 22
+  Skipped Images: 0
+  Total URLs to Process: 22
+
+Domain: teleteeshirt.com
+  albumcoverprint: 39
+  Skipped Images: 0
+  Total URLs to Process: 39
 
