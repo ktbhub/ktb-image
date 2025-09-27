@@ -1,8 +1,8 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-27 20:25:30 +07
+Timestamp: 2025-09-27 20:41:37 +07
 
-Domain: eteeclothing.com
-  ktbtee: 21
+Domain: designatshop.com
+  ktbtee: 9
   Skipped Images: 0
-  Total URLs to Process: 21
+  Total URLs to Process: 9
 

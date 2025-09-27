@@ -295,8 +295,7 @@
                 "pattern": "-Ornament.jpg",
                 "action": "generate",
                 "mockup_sets_to_use": ["amertee"],
-                "coords": { "x": 287, "y": 280, "w": 418, "h": 456 },
-                "skipWhite": true
+                "coords": { "x": 287, "y": 280, "w": 418, "h": 456 }
             }
         ],
         "teeslocal.com": [
