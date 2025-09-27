@@ -129,41 +129,72 @@ def clean_title(title, keywords):
     return re.sub(r'\s+', ' ', re.sub(pattern, '', title, flags=re.IGNORECASE).replace('-', ' ')).strip()
 
 def process_image(design_img, mockup_img, mockup_config, user_config):
-    ImageDraw.floodfill(design_img, (0, 0), (0, 0, 0, 0), thresh=30)
+    """Cắt, trim và dán design vào mockup."""
+    design_w, design_h = design_img.size
+    pixels = design_img.load()
+    visited = set()
+    corner_points = [
+        (0, 0), (design_w - 1, 0),
+        (0, design_h - 1), (design_w - 1, design_h - 1)
+    ]
+    for start_x, start_y in corner_points:
+        if (start_x, start_y) in visited:
+            continue
+        seed_color = design_img.getpixel((start_x, start_y))
+        seed_r, seed_g, seed_b = seed_color[:3]
+        stack = [(start_x, start_y)]
+        while stack:
+            x, y = stack.pop()
+            if (x, y) in visited or not (0 <= x < design_w and 0 <= y < design_h):
+                continue
+            visited.add((x, y))
+            current_pixel = pixels[x, y]
+            current_r, current_g, current_b = current_pixel[:3]
+            if abs(current_r - seed_r) < 30 and abs(current_g - seed_g) < 30 and abs(current_b - seed_b) < 30:
+                pixels[x, y] = (0, 0, 0, 0)
+                stack.extend([(x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1)])
     trimmed_design = get_trimmed_image_with_padding(design_img)
-    if not trimmed_design: return None
-    
+    if not trimmed_design:
+        return None
     mockup_w, mockup_h = mockup_config['w'], mockup_config['h']
-    scale = min(mockup_w / trimmed_design.width, mockup_h / trimmed_design.height)
-    final_w, final_h = int(trimmed_design.width * scale), int(trimmed_design.height * scale)
+    design_w, design_h = trimmed_design.size
+    scale = min(mockup_w / design_w, mockup_h / design_h)
+    final_w = int(design_w * scale)
+    final_h = int(design_h * scale)
     resized_design = trimmed_design.resize((final_w, final_h), Image.Resampling.LANCZOS)
-    
     final_x = mockup_config['x'] + (mockup_w - final_w) // 2
     final_y = mockup_config['y'] + 20
     final_mockup = mockup_img.copy()
     final_mockup.paste(resized_design, (final_x, final_y), resized_design)
-    
     watermark_content = user_config.get("watermark_text")
     if watermark_content:
         if watermark_content.startswith(('http://', 'https://')):
             watermark_img = download_image(watermark_content)
             if watermark_img:
+                max_wm_width = 280
                 wm_w, wm_h = watermark_img.size
-                if wm_w > 280:
-                    watermark_img = watermark_img.resize((280, int(280 * wm_h / wm_w)), Image.Resampling.LANCZOS)
-                paste_x = final_mockup.width - watermark_img.width - 20
-                paste_y = final_mockup.height - watermark_img.height - 50
+                if wm_w > max_wm_width:
+                    aspect_ratio = wm_h / wm_w
+                    new_w = max_wm_width
+                    new_h = int(new_w * aspect_ratio)
+                    watermark_img = watermark_img.resize((new_w, new_h), Image.Resampling.LANCZOS)
+                wm_w, wm_h = watermark_img.size
+                paste_x = final_mockup.width - wm_w - 20
+                paste_y = final_mockup.height - wm_h - 50
                 final_mockup.paste(watermark_img, (paste_x, paste_y), watermark_img)
         else:
             draw = ImageDraw.Draw(final_mockup)
             try:
-                font = ImageFont.truetype(os.path.join(os.path.dirname(os.path.abspath(__file__)), "verdanab.ttf"), 100)
+                font_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "verdanab.ttf")
+                font = ImageFont.truetype(font_path, 100)
             except IOError:
                 font = ImageFont.load_default()
             text_bbox = draw.textbbox((0, 0), watermark_content, font=font)
-            text_w, text_h = text_bbox[2] - text_bbox[0], text_bbox[3] - text_bbox[1]
-            draw.text((final_mockup.width - text_w - 20, final_mockup.height - text_h - 50), watermark_content, fill=(0, 0, 0, 128), font=font)
-            
+            text_w = text_bbox[2] - text_bbox[0]
+            text_h = text_bbox[3] - text_bbox[1]
+            text_x = final_mockup.width - text_w - 20
+            text_y = final_mockup.height - text_h - 50
+            draw.text((text_x, text_y), watermark_content, fill=(0, 0, 0, 128), font=font)
     return final_mockup
 
 def get_repo_size(path='.'):

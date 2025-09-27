@@ -1,42 +1,7 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-27 11:05:21 +07
+Timestamp: 2025-09-27 15:19:05 +07
 
-Domain: berrylittles.com
-  whatwillwear: 8
-  Skipped Images: 0
-  Total URLs to Process: 8
-
-Domain: dreameshirt.com
-  whatwillwear: 3
-  Skipped Images: 0
-  Total URLs to Process: 3
-
-Domain: milkywayshirt.com
-  albumcoverprint: 16
-  Skipped Images: 0
-  Total URLs to Process: 16
-
-Domain: teleteeshirt.com
-  albumcoverprint: 1
-  Skipped Images: 0
-  Total URLs to Process: 1
-
-Domain: melonashirt.com
-  Skipped Images: 39
-  Total URLs to Process: 39
-
-Domain: arjomany.com
-  whatwillwear: 64
-  Skipped Images: 0
-  Total URLs to Process: 64
-
-Domain: collectionpostertour.com
-  albumcoverprint: 40
-  Skipped Images: 6
-  Total URLs to Process: 46
-
-Domain: mercuryshirt.com
-  albumcoverprint: 2
-  Skipped Images: 0
-  Total URLs to Process: 2
+Domain: nowbestshirt.com
+  Skipped Images: 18
+  Total URLs to Process: 18
 
