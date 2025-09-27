@@ -33,6 +33,7 @@
             "shirt_classic",
             "shirts-men-shirt",
             "White-Ornaments",
+			"white-shirt",
             "classic-mens",
             "men-shirt",
             "sweatshirt",
@@ -152,6 +153,12 @@
                 "action": "generate",
                 "mockup_sets_to_use": ["ktbtee"],
                 "coords": { "x": 643, "y": 889, "w": 707, "h": 982 }
+            },
+            {
+                "pattern": "-white-shirt.jpg",
+                "action": "generate",
+                "mockup_sets_to_use": ["ktbtee"],
+                "coords": { "x": 275, "y": 536, "w": 416, "h": 502 }
             }
         ],
         "techteesusa.com": [
