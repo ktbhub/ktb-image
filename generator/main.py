@@ -397,7 +397,7 @@ def main():
                 crop_coords = matched_rule.get("coords")
                 if not crop_coords: skipped_urls_for_domain.append(url); continue
                 
-                pixel_x = crop_coords['x'] + crop_coords['w'] - 1
+                pixel_x = crop_coords['x']
                 pixel_y = crop_coords['y'] + crop_coords['h'] - 1
                 pixel = img.getpixel((pixel_x, pixel_y))
                 avg_brightness = sum(pixel[:3]) / 3

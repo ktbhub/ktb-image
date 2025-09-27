@@ -1,13 +1,8 @@
 --- Summary of Last Generation ---
-Timestamp: 2025-09-27 16:59:33 +07
+Timestamp: 2025-09-27 20:25:30 +07
 
-Domain: teespix.com
-  amertee: 22
+Domain: eteeclothing.com
+  ktbtee: 21
   Skipped Images: 0
-  Total URLs to Process: 22
-
-Domain: teleteeshirt.com
-  albumcoverprint: 39
-  Skipped Images: 0
-  Total URLs to Process: 39
+  Total URLs to Process: 21
 

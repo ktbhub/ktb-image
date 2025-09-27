@@ -1,4 +1,4 @@
-albumcoverprint: 653
-amertee: 235
-ktbtee: 292
-whatwillwear: 115
+albumcoverprint: 857
+amertee: 425
+ktbtee: 516
+whatwillwear: 319
