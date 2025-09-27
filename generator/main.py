@@ -390,7 +390,8 @@ def main():
             
             filename = os.path.basename(url)
             if should_globally_skip(filename, global_skip_keywords):
-                skipped_urls_for_domain.append(url); continue
+                #skipped_urls_for_domain.append(url); continue
+                continue
             
             matched_rule = next((r for r in domain_rules if r.get("pattern", "") in filename), None)
             
@@ -451,12 +452,33 @@ def main():
             except Exception as e:
                 print(f"Lỗi khi xử lý ảnh {url}: {e}"); skipped_urls_for_domain.append(url)
         
+# --- THAY THẾ KHỐI GHI FILE SKIP ---
         if skipped_urls_for_domain:
-            timestamp = datetime.now(pytz.timezone('Asia/Ho_Chi_Minh')).strftime('%Y%m%d_%H%M%S')
-            skip_log_filename = f"{domain}.{timestamp}.txt"
-            with open(os.path.join(SKIP_URL_DIR, skip_log_filename), 'w', encoding='utf-8') as f:
-                f.write('\n'.join(skipped_urls_for_domain))
-            print(f"📝 Ghi {len(skipped_urls_for_domain)} URL bị bỏ qua vào file: {skip_log_filename}")
+            # 1. Xác định tên file cố định, không có timestamp
+            skip_log_filename = f"{domain}.txt"
+            skip_log_path = os.path.join(SKIP_URL_DIR, skip_log_filename)
+            
+            existing_content = ""
+            # 2. Đọc nội dung file cũ nếu tồn tại
+            try:
+                with open(skip_log_path, 'r', encoding='utf-8') as f:
+                    existing_content = f.read()
+            except FileNotFoundError:
+                pass # Bỏ qua nếu file chưa tồn tại
+
+            # 3. Chuẩn bị nội dung mới và kết hợp
+            new_urls_to_write = '\n'.join(skipped_urls_for_domain)
+            
+            # Nối nội dung mới lên trên nội dung cũ
+            final_content = new_urls_to_write
+            if existing_content:
+                final_content += '\n' + existing_content
+            
+            # 4. Ghi đè toàn bộ nội dung đã kết hợp vào file
+            with open(skip_log_path, 'w', encoding='utf-8') as f:
+                f.write(final_content)
+            
+            print(f"📝 Đã ghi {len(skipped_urls_for_domain)} URL bị bỏ qua mới vào file: {skip_log_filename}")
 
         urls_summary[domain] = {'processed_by_mockup': processed_by_mockup, 'skipped': len(skipped_urls_for_domain), 'total_to_process': new_count}
         
